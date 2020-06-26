@@ -1,0 +1,105 @@
+/**
+*
+*  Toggle Switch
+*
+**/
+
+@mixin switch-size($switch-width, $switch-container-width: $switch-width * 2) {
+  border-top-width: $switch-width/2;
+  border-bottom-width: $switch-width/2;
+  width: $switch-container-width;
+
+  &:before {
+    margin-top: -$switch-width/2;
+    width: $switch-width;
+    height: $switch-width;
+  }
+
+  &.#{$ns}switch--active {
+    &:before {
+      transform: translate3d($switch-width, 0, 0);
+    }
+  }
+}
+
+@mixin switch-skin($color, $color-shadow: adjust_hue(darken($color, 10%), 7%)) {
+  &:before {
+    background: $color;
+    box-shadow: inset 0 0 0 $base-border-width $color-shadow;
+  }
+
+  &:hover {
+    &:before {
+      box-shadow: inset 0 0 0 $base-border-width darken($color-shadow, 10%);
+    }
+  }
+}
+
+// Base switch class
+
+.#{$ns}switch {
+  @extend %noselect;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: $base-border-width;
+  background-color: $mono-light;
+  cursor: pointer;
+  background-clip: content-box;
+  box-sizing: content-box;
+  border-color: transparent;
+  border-style: solid;
+
+  &[disabled="disabled"] {
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: $white;
+    box-shadow: inset 0 0 0 $base-border-width $mono-light;
+    transition: transform 0.1s ease-in-out, box-shadow 0.05s, background 0.05s;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    &:before {
+      box-shadow: inset 0 0 0 $base-border-width $mono;
+    }
+  }
+}
+
+// Colored classes
+
+.#{$ns}switch--primary {
+  @include switch-skin($brand-primary, $brand-primary-shadow);
+}
+
+.#{$ns}switch--success {
+  @include switch-skin($brand-success, $brand-success-shadow);
+}
+
+.#{$ns}switch--warning {
+  @include switch-skin($brand-warning, $brand-warning-shadow);
+}
+
+.#{$ns}switch--danger {
+  @include switch-skin($brand-danger, $brand-danger-shadow);
+}
+
+.#{$ns}switch--sm {
+  @include switch-size($switch-width-sm);
+}
+
+.#{$ns}switch--md {
+  @include switch-size($switch-width-md);
+}
+
+.#{$ns}switch--lg {
+  @include switch-size($switch-width-lg);
+}

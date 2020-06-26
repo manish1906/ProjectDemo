@@ -1,0 +1,10 @@
+<ul class="ba-typeahead-menu ba-typeahead-menu--sm ba-typeahead-menu--block" ng-show="isOpen() && !moveInProgress"
+    ng-style="{top: position().top+'px', left: position().left+'px'}" style="display: block;" role="listbox"
+    aria-hidden="{{!isOpen()}}">
+    <li class="ba-typeahead-item" ng-repeat="match in matches track by $index" ng-class="{'ba-typeahead-item--active': isActive($index) }"
+        ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">
+        <div ba-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>
+        <div ba-text="p x-small" ba-c-text="2">{{match.address.name}}</div>
+        hey
+    </li>
+</ul>

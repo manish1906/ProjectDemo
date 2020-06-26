@@ -1,0 +1,265 @@
+[#{$ns}text~="flat"] {
+  line-height: 0px !important;
+}
+
+
+[#{$ns}text~="base"] {
+  @extend %base;
+}
+
+[#{$ns}text~="p"],
+.p {
+  @extend %p;
+}
+
+// [START: Basic sizing]
+[#{$ns}text~="xx-small"],
+.xx-small {
+  @extend %xx-small;
+}
+
+[#{$ns}text~="x-small"],
+.x-small {
+  @extend %x-small;
+}
+
+[#{$ns}text~="small"],
+.small {
+  @extend %small;
+}
+
+[#{$ns}text~="medium"],
+.medium {
+  @extend %medium;
+}
+
+[#{$ns}text~="large"],
+.large {
+  @extend %large;
+}
+
+// [END]
+
+[#{$ns}-text~="lead"],
+.lead {
+  @extend %lead;
+}
+
+[#{$ns}text~="a"],
+.a {
+  @extend %a;
+}
+
+[#{$ns}text~="link"],
+.link {
+  @extend %link;
+}
+
+[#{$ns}text~="underline"],
+.underline {
+  @extend %underline;
+}
+
+// [START: h1-h6]
+[#{$ns}text~="h1"],
+.h1 {
+  @extend %h1;
+}
+
+[#{$ns}text~="h2"],
+.h2 {
+  @extend %h2;
+}
+
+[#{$ns}text~="h3"],
+.h3 {
+  @extend %h3;
+}
+
+[#{$ns}text~="h4"],
+.h4 {
+  @extend %h4;
+}
+
+[#{$ns}text~="h5"],
+.h5 {
+  @extend %h5;
+}
+
+[#{$ns}text~="h6"],
+.h6 {
+  @extend %h6;
+}
+
+// [END]
+
+// [START: Decorations]
+[#{$ns}text~="small-caps"],
+.small-caps {
+  @extend %small-caps;
+}
+
+[#{$ns}text~="italic"],
+em,
+.italic {
+  @extend %italic;
+}
+
+[#{$ns}text~="extra-bold"],
+.extra-bold {
+  @extend %extra-bold;
+}
+
+[#{$ns}text~="bold"],
+strong,
+.bold {
+  @extend %bold;
+}
+
+[#{$ns}text~="semi-bold"],
+.semi-bold {
+  @extend %semi-bold;
+}
+
+[#{$ns}text~="light"],
+.light {
+  @extend %light;
+}
+
+[#{$ns}text~="normal"],
+.normal {
+  @extend %normal;
+}
+
+[#{$ns}text~="sm-heading-caps"] .sm-heading-caps {
+  @extend %sm-heading-caps;
+}
+
+[#{$ns}text~="md-heading-caps"],
+.md-heading-caps {
+  @extend %md-heading-caps;
+}
+
+[#{$ns}text~="lg-heading-caps"],
+.lg-heading-caps {
+  @extend %lg-heading-caps;
+}
+
+// [END]
+
+// [START: Headings]
+[#{$ns}text~="heading"] {
+  @extend %heading;
+}
+
+[#{$ns}text~="sm-heading"],
+.sm-heading {
+  @extend %sm-heading;
+}
+
+[#{$ns}text~="md-heading"],
+.md-heading {
+  @extend %md-heading;
+}
+
+[#{$ns}text~="lg-heading"],
+.lg-heading {
+  @extend %lg-heading;
+}
+
+// [END]
+
+// [START: Paragraphs]
+[#{$ns}text~="sm-paragraph"],
+.sm-paragraph {
+  @extend %sm-paragraph;
+}
+
+[#{$ns}text~="md-paragraph"],
+.md-paragraph {
+  @extend %md-paragraph;
+}
+
+[#{$ns}text~="lg-paragraph"],
+.lg-paragraph {
+  @extend %lg-paragraph;
+}
+
+// [END]
+
+// [START: Alignment]
+[#{$ns}text~="center"],
+.text-center {
+  @extend %text-center;
+}
+
+[#{$ns}text~="right"],
+.text-right {
+  @extend %text-right;
+}
+
+[#{$ns}text~="left"],
+.text-left {
+  @extend %text-left;
+}
+
+[#{$ns}text~="top"],
+.text-top {
+  @extend %text-top;
+}
+
+[#{$ns}text~="middle"],
+.text-middle {
+  @extend %text-middle;
+}
+
+// [END]
+
+[#{$ns}text~="interact"],
+.text-interact {
+  @extend %text-interact;
+}
+
+[#{$ns}text~="nowrap"],
+.text-nowrap {
+  @extend %text-nowrap;
+}
+
+// [START: Ellipsis]
+[#{$ns}text~="ellipsis"],
+.text-ellipsis {
+  @extend %text-ellipsis;
+}
+
+[#{$ns}text-ellipsis~="1"],
+.text-ellipsis-1 {
+  @extend %text-ellipsis;
+  max-width: 50px;
+}
+
+[#{$ns}text-ellipsis~="2"],
+.text-ellipsis-1 {
+  @extend %text-ellipsis;
+  max-width: 100px;
+}
+
+[#{$ns}text-ellipsis~="3"],
+.text-ellipsis-1 {
+  @extend %text-ellipsis;
+  max-width: 150px;
+}
+
+// [END]
+
+// [START: Line height]
+$i: 1;
+
+@while $i < 2 {
+  [#{$ns}text-lh~="#{$i}"] {
+    line-height: $i !important;
+  }
+
+  $i: $i+0.1;
+}
+
+// [END]

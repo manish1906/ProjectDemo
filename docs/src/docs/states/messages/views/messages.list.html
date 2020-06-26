@@ -1,0 +1,14 @@
+
+
+<input type="text" ng-model="messageTitle" placeholder="Message Title">
+<input type="text" ng-model="messageDescription" placeholder="Message Description">
+<button ng-click="addMessage()">Add Message</button><br>
+<input type="search" ng-model="search" placeholder="Search Message">
+<ul>
+    <li ng-repeat="msg in messagelist | filter:search"> 
+        <a style="color: blue;font-size: medium;" class="rootLink item-support colorize" ui-sref='main.messages.details({message: $index})' >{{$index+1 }}    {{msg.messageTitle}}</a>
+        <a style="color: red;"ng-click="Delete($index)">Delete</a>
+      <!-- {{msg.messageTitle}}{{msg.messageDescription}} -->
+
+    </li>
+</ul>

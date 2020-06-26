@@ -1,0 +1,683 @@
+// TODO: move component based styles to relevant component, like svg etc.
+// change naming pattern to ba-[element]-c
+
+[#{$ns}c-fill~="inverse"] {
+  background: $mono-dark !important;
+}
+
+[#{$ns}c-svg~="inverse"] {
+  fill: $mono-dark !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-dark !important;
+  }
+}
+
+[#{$ns}c-fill~="pure-white"] {
+  background: $pure-white !important;
+}
+
+[#{$ns}c-svg~="pure-white"] {
+  fill: $pure-white !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $pure-white !important;
+  }
+}
+
+[#{$ns}c-fill~="white"] {
+  background: $white !important;
+}
+
+[#{$ns}c-svg~="white"] {
+  fill: $white !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $white !important;
+  }
+}
+
+[#{$ns}c-fill~="mono-lightest"] {
+  background: $mono-lightest !important;
+}
+
+[#{$ns}c-svg~="mono-lightest"] {
+  fill: $mono-lightest !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-lightest !important;
+  }
+}
+
+[#{$ns}c-fill~="mono-lighter"] {
+  background: $mono-lighter !important;
+}
+
+[#{$ns}c-svg~="mono-lighter"] {
+  fill: $mono-lighter !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-lighter !important;
+  }
+}
+
+[#{$ns}c-fill~="mono-light"] {
+  background: $mono-light !important;
+}
+
+[#{$ns}c-svg~="mono-light"] {
+  fill: $mono-light !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-light !important;
+  }
+}
+
+[#{$ns}c-fill~="mono"] {
+  background: $mono !important;
+}
+
+[#{$ns}c-svg~="mono"] {
+  fill: $mono !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono !important;
+  }
+}
+
+[#{$ns}c-fill~="mono-dark"] {
+  background: $mono-dark !important;
+}
+
+[#{$ns}c-svg~="mono-dark"] {
+  fill: $mono-dark !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-dark !important;
+  }
+}
+
+[#{$ns}c-fill~="mono-darker"] {
+  background: $mono-darker !important;
+}
+
+[#{$ns}c-svg~="mono-darker"] {
+  fill: $mono-darker !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-darker !important;
+  }
+}
+
+[#{$ns}c-fill~="mono-darkest"] {
+  background: $mono-darkest !important;
+}
+
+[#{$ns}c-svg~="mono-darkest"] {
+  fill: $mono-darkest !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-darkest !important;
+  }
+}
+
+[#{$ns}c-fill~="primary"] {
+  background: $brand-primary !important;
+}
+
+[#{$ns}c-svg~="primary"] {
+  fill: $brand-primary !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $brand-primary !important;
+  }
+}
+
+[#{$ns}c-fill~="accent"] {
+  background: $brand-accent !important;
+}
+
+[#{$ns}c-svg~="accent"] {
+  fill: $brand-accent !important;
+
+  path,
+  polygon {
+    fill: $brand-accent !important;
+  }
+}
+
+[#{$ns}c-fill~="primary-shadow"] {
+  background: $brand-primary-shadow !important;
+}
+
+[#{$ns}c-fill~="accent-shadow"] {
+  background: $brand-accent-shadow !important;
+}
+
+[#{$ns}c-svg~="primary-shadow"] {
+  fill: $brand-primary-shadow !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $brand-primary-shadow !important;
+  }
+}
+
+[#{$ns}c-svg~="accent-shadow"] {
+  fill: $brand-accent-shadow !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $brand-accent-shadow !important;
+  }
+}
+
+[#{$ns}c-fill~="success"] {
+  background: $brand-success !important;
+}
+
+[#{$ns}c-svg~="success"] {
+  fill: $brand-success !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $brand-success !important;
+  }
+}
+
+[#{$ns}c-fill~="warning"] {
+  background: $brand-warning !important;
+}
+
+[#{$ns}c-svg~="warning"] {
+  fill: $brand-warning !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $brand-warning !important;
+  }
+}
+
+[#{$ns}c-fill~="danger"] {
+  background: $brand-danger !important;
+}
+
+[#{$ns}c-svg~="danger"] {
+  fill: $brand-danger !important;
+}
+
+[#{$ns}c-fill~="warning-highlight"] {
+  background: lighten(
+    saturate(adjust-hue($brand-warning, 12), 8),
+    34
+  ) !important;
+}
+
+// Text
+[#{$ns}c-fill~="i1"] {
+  background: $inverse-text-primary !important;
+}
+
+[#{$ns}c-svg~="i1"] {
+  fill: $inverse-text-primary !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $inverse-text-primary !important;
+  }
+}
+
+[#{$ns}c-fill~="i2"] {
+  background: $inverse-text-secondary !important;
+}
+
+[#{$ns}c-svg~="i2"] {
+  fill: $inverse-text-secondary !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $inverse-text-secondary !important;
+  }
+}
+
+[#{$ns}c-fill~="i3"] {
+  background: $inverse-text-disabled !important;
+}
+
+[#{$ns}c-svg~="i3"] {
+  fill: $inverse-text-disabled !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $inverse-text-disabled !important;
+  }
+}
+
+[#{$ns}c-fill~="i4"] {
+  background: $inverse-text-dividers !important;
+}
+
+[#{$ns}c-svg~="i4"] {
+  fill: $inverse-text-dividers !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $inverse-text-dividers !important;
+  }
+}
+
+[#{$ns}c-fill~="1"] {
+  background: $text-primary !important;
+}
+
+[#{$ns}c-svg~="1"] {
+  fill: $text-primary !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $text-primary !important;
+  }
+}
+
+[#{$ns}c-fill~="2"] {
+  background: $text-secondary !important;
+}
+
+[#{$ns}c-svg~="2"] {
+  fill: $text-secondary !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $text-secondary !important;
+  }
+}
+
+[#{$ns}c-fill~="3"] {
+  background: $text-disabled !important;
+}
+
+[#{$ns}c-svg~="3"] {
+  fill: $text-disabled !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $text-disabled !important;
+  }
+}
+
+[#{$ns}c-fill~="4"] {
+  background: $text-dividers !important;
+}
+
+[#{$ns}c-svg~="4"] {
+  fill: $text-dividers !important;
+
+  svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $text-dividers !important;
+  }
+}
+
+// Borders
+[#{$ns}border] {
+  border-style: solid;
+
+  &[#{$ns}border~="round"] {
+    border-radius: $base-border-radius;
+  }
+
+  &[#{$ns}border~="rounder"] {
+    border-radius: $base-border-radius * 2;
+  }
+}
+
+[#{$ns}border~="all"] {
+  border-width: $base-border-width;
+
+  &[#{$ns}border~="thick"] {
+    border-width: $base-border-width * 2;
+  }
+}
+
+[#{$ns}border~="top"] {
+  border-top-width: $base-border-width;
+
+  &[#{$ns}border~="thick"] {
+    border-top-width: $base-border-width * 2;
+  }
+}
+
+[#{$ns}border~="right"] {
+  border-right-width: $base-border-width;
+
+  &[#{$ns}border~="thick"] {
+    border-right-width: $base-border-width * 2;
+  }
+}
+
+[#{$ns}border~="bottom"] {
+  border-bottom-width: $base-border-width;
+
+  &[#{$ns}border~="thick"] {
+    border-bottom-width: $base-border-width * 2;
+  }
+}
+
+[#{$ns}border~="left"] {
+  border-left-width: $base-border-width;
+
+  &[#{$ns}border~="thin"] {
+    border-left-width: $base-border-width/2;
+  }
+
+  &[#{$ns}border~="thick"] {
+    border-left-width: $base-border-width * 2;
+  }
+}
+
+[#{$ns}border~="dashed"],
+.#{$ns}border-dashed {
+  border-style: dashed !important;
+}
+
+[#{$ns}border~="pure-white"],
+.#{$ns}border-pure-white {
+  border-color: $pure-white !important;
+}
+
+[#{$ns}border~="white"],
+.#{$ns}border-white {
+  border-color: $white !important;
+}
+
+[#{$ns}border~="mono-lightest"],
+.#{$ns}border-mono-lightest {
+  border-color: $mono-lightest !important;
+}
+
+[#{$ns}border~="mono-lighter"],
+.#{$ns}border-mono-lighter {
+  border-color: $mono-lighter !important;
+}
+
+[#{$ns}border~="mono-light"],
+.#{$ns}border-mono-light {
+  border-color: $mono-light !important;
+}
+
+[#{$ns}border~="mono"],
+.#{$ns}border-mono {
+  border-color: $mono !important;
+}
+
+[#{$ns}border~="primary"],
+.#{$ns}border-primary {
+  border-color: $brand-primary !important;
+}
+
+[#{$ns}border~="accent"],
+.#{$ns}border-accent {
+  border-color: $brand-accent !important;
+}
+
+[#{$ns}border~="success"],
+.#{$ns}border-success {
+  border-color: $brand-success !important;
+}
+
+[#{$ns}border~="warning"],
+.#{$ns}border-warning {
+  border-color: $brand-warning-shadow !important;
+}
+
+[#{$ns}border~="danger"],
+.#{$ns}border-danger {
+  border-color: $brand-danger !important;
+}
+
+[#{$ns}border~="divider"],
+.#{$ns}border-danger {
+  border-color: $text-dividers !important;
+}
+
+// Text
+[#{$ns}c-text~="i1"] {
+  color: $inverse-text-primary !important;
+}
+
+[#{$ns}c-text~="i2"] {
+  color: $inverse-text-secondary !important;
+}
+
+[#{$ns}c-text~="i3"] {
+  color: $inverse-text-disabled !important;
+}
+
+[#{$ns}c-text~="i4"] {
+  color: $inverse-text-dividers !important;
+}
+
+[#{$ns}c-text~="1"] {
+  color: $text-primary !important;
+}
+
+[#{$ns}c-text~="2"] {
+  color: $text-secondary !important;
+}
+
+[#{$ns}c-text~="3"] {
+  color: $text-disabled !important;
+}
+
+[#{$ns}c-text~="4"] {
+  color: $text-dividers !important;
+}
+
+[#{$ns}c-text~="muted"],
+[#{$ns}c-text~="mono-light"],
+.#{$ns}text-muted {
+  color: $mono-light !important;
+}
+
+[#{$ns}c-text~="mono"],
+.#{$ns}text-mono {
+  color: $mono !important;
+}
+
+[#{$ns}c-text~="mono-lighter"],
+.#{$ns}text-mono-lighter {
+  color: $mono-lighter !important;
+}
+
+[#{$ns}c-text~="mono-lightest"],
+.#{$ns}text-mono-lightest {
+  color: $mono-lightest !important;
+}
+
+[#{$ns}c-text~="mono-dark"],
+.#{$ns}text-mono-dark {
+  color: $mono-dark !important;
+}
+
+[#{$ns}c-text~="white"],
+.#{$ns}text-white {
+  color: $white !important;
+}
+
+[#{$ns}c-text~="pure-white"],
+.#{$ns}text-pure-white {
+  color: $pure-white !important;
+}
+
+[#{$ns}c-text~="primary"],
+.#{$ns}text-primary {
+  color: $brand-primary !important;
+}
+
+[#{$ns}c-text~="accent"],
+.#{$ns}text-accent {
+  color: $brand-accent !important;
+}
+
+[#{$ns}c-text~="success"],
+.#{$ns}text-success {
+  color: $brand-success !important;
+}
+
+[#{$ns}c-text~="warning"],
+.#{$ns}text-warning {
+  color: $brand-warning !important;
+}
+
+[#{$ns}c-text~="danger"],
+.#{$ns}text-danger {
+  color: $brand-danger !important;
+}
+
+[#{$ns}c-text~="primary-shadow"],
+.#{$ns}text-primary-shadow {
+  color: $brand-primary-shadow !important;
+}
+
+[#{$ns}c-text~="accent-shadow"],
+.#{$ns}text-accent-shadow {
+  color: $brand-accent-shadow !important;
+}
+
+[#{$ns}c-text~="success-shadow"],
+.#{$ns}text-success-shadow {
+  color: $brand-success-shadow !important;
+}
+
+[#{$ns}c-text~="warning-shadow"],
+.#{$ns}text-warning-shadow {
+  color: $brand-warning-shadow !important;
+}
+
+[#{$ns}c-text~="danger-shadow"],
+.#{$ns}text-danger-shadow {
+  color: $brand-danger-shadow !important;
+}
+
+[#{$ns}c-shadow~="0"],
+.#{$ns}shadow-0 {
+  box-shadow: $z0-shadow;
+}
+
+[#{$ns}c-shadow~="1"],
+.#{$ns}shadow-1 {
+  box-shadow: $z1-shadow;
+}
+
+[#{$ns}c-shadow~="2"],
+.#{$ns}shadow-2 {
+  box-shadow: $z2-shadow;
+}
+
+[#{$ns}c-shadow~="3"],
+.#{$ns}shadow-3 {
+  box-shadow: $z3-shadow;
+}

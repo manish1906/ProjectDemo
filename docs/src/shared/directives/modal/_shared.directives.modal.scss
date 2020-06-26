@@ -1,0 +1,236 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal__body   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.#{$ns}modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.#{$ns}modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20010 !important;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+}
+.#{$ns}modal-open .#{$ns}modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.#{$ns}modal-dialog {
+  margin: 0 auto;
+  background: $pure-white;
+  height: auto;
+  width: $modal-width;
+  border-radius: $base-border-radius;
+  box-shadow: $z3-shadow;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+// Modal background
+.#{$ns}modal-backdrop {
+  @extend %noselect;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $mono-dark;
+  z-index: 20000 !important;
+  // Fade for backdrop
+  &.fade {
+    @include opacity(0);
+  }
+  &.in {
+    @include opacity(0.6);
+  }
+
+  transition: opacity .2s ease-in-out;
+}
+
+.#{$ns}modal--sm {
+  width: $modal-sm-width;
+  min-height: $modal-sm-height;
+}
+
+.#{$ns}modal--md {
+  width: $modal-md-width;
+}
+
+.#{$ns}modal--lg {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  // bottom: 10%; // TODO verify this, but i think it looks better to have dynamic height
+  right: 10%;
+  width: auto;
+}
+
+.#{$ns}modal--xl {
+  position: absolute;
+  top: $base-spacing-unit * 4;
+  left: $base-spacing-unit * 4;
+  bottom: $base-spacing-unit * 4;
+  right: $base-spacing-unit * 4;
+  width: auto;
+
+  .#{$ns}modal__header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $modal-header-height;
+  }
+
+  .#{$ns}modal__body {
+    position: absolute;
+    top: $modal-header-height;
+    width: 100%;
+    bottom: $modal-footer-height;
+    overflow: auto;
+  }
+
+  .#{$ns}modal__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $modal-footer-height;
+    overflow: hidden;
+  }
+}
+
+.#{$ns}modal--full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  border-radius: 0;
+
+  .#{$ns}modal__header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $modal-header-height;
+    border-radius: 0;
+  }
+
+  .#{$ns}modal__body {
+    position: absolute;
+    top: $modal-header-height;
+    width: 100%;
+    bottom: $modal-footer-height;
+    overflow: auto;
+    border-radius: 0;
+  }
+
+  .#{$ns}modal__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $modal-footer-height;
+    overflow: auto;
+  }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.#{$ns}modal__header {
+  font-size: 14px;
+  @extend %semi-bold;
+  color: $mono;
+  background: $white;
+  padding: 0 $base-spacing-unit * 4;
+  height: $modal-header-height;
+  line-height: $modal-header-height;
+  border-bottom: $divider-border;
+  border-top-left-radius: $base-border-radius;
+  border-top-right-radius: $base-border-radius;
+  letter-spacing: 0.02em;
+}
+
+.#{$ns}modal__breadcrumbs {
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  margin-left: -300px;
+}
+
+.#{$ns}modal__close {
+  float: right;
+  cursor: pointer;
+
+  svg {
+    fill: $mono-light;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    svg {
+      fill: $brand-primary;
+    }
+  }
+}
+
+// Actual modal
+.#{$ns}modal__body {
+  position: relative;
+  padding: $base-spacing-unit * 4;
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+
+  &:last-child {
+    border-bottom-left-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+  }
+}
+
+// Footer (for actions)
+.#{$ns}modal__footer {
+  border-top: $divider-border;
+
+  padding: $base-spacing-unit * 3 $base-spacing-unit * 4;
+  border-bottom-left-radius: $base-border-radius;
+  border-bottom-right-radius: $base-border-radius;
+  @include clearfix(); // clear it in case folks use .pull-* classes on buttons
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}

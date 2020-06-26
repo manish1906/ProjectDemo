@@ -1,0 +1,62 @@
+{
+  "name": "at",
+  "version": "0.0.1",
+  "description": "the trail",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.docs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boardactive/docs"
+  },
+  "author": "Hunter Brennick",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/boardactive/docs"
+  },
+  "homepage": "http://www.boardactive.com/",
+  "devDependencies": {
+    "express": "^4.9.5",
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.7",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^1.0.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-uglify-es": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-env": "^0.4.1",
+    "grunt-express": "^1.4.1",
+    "grunt-filerev": "^2.3.0",
+    "grunt-glob": "^0.1.0",
+    "grunt-http-upload": "^0.1.8",
+    "grunt-ng-annotate": "^0.10.0",
+    "grunt-parallel": "^0.4.1",
+    "grunt-preprocess": "^4.0.0",
+    "grunt-sass": "^1.2.0",
+    "grunt-spritesmith": "^5.1.1",
+    "grunt-svgstore": "^0.5.0",
+    "grunt-usemin": "^3.0.0",
+    "matchdep": "^0.3.0",
+    "phantomjs": "^1.9.16"
+  },
+  "dependencies": {
+    "angular": "1.3.2",
+    "angular-intercom": "^2.0.4",
+    "angular-animate": "1.3.2",
+    "angular-google-maps-native": "^1.3.0",
+    "angular-hotkeys": "^1.4.0",
+    "angular-ui-router": "^0.2.13",
+    "greensock": "^1.20.2",
+    "jquery": "2.1.3",
+    "lodash": "^4.0.0",
+    "lz-string": "^1.4.4",
+    "ngstorage": "^0.3.2",
+    "tinycolor2": "^1.4.1",
+    "vsGoogleAutocomplete": "0.5.0"
+  }
+}

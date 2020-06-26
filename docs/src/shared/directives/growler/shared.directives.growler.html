@@ -1,0 +1,15 @@
+<div class="ba-growler" ba-pxy="2">
+    <div class="ba-growl ba-growl--{{growl.type}} jsa-growl"
+         ng-click="growl.action()"
+         ng-repeat="growl in growls">
+        <div class="ba-growl__icon" ng-if="::growl.icon" ba-pl="3" ba-pr="1">
+            <div ba-svg="{{::growl.icon}}" class="ba-svg-sm"></div>
+        </div>
+        <div class="ba-growl__body" ba-px="2" ba-py="3">
+            <span ba-text="p flat">{{growl.text}}</span>
+        </div>
+        <div class="ba-growl__close" ng-click="remove(growl, $event)" ba-px="4" ba-c-text="i3" ba-text="extra-bold">
+            X
+        </div>
+    </div>
+</div>

@@ -1,0 +1,296 @@
+$ns: "ba-";
+
+// [START: Colors]
+// whites
+$pure-white: #ffffff;
+$white: #f7f8fc;
+
+$brand-primary: #1e90ff !default;
+$brand-accent: #5352ed !default;
+$brand-success: #2ed573 !default;
+$brand-warning: #ffa502 !default;
+$brand-danger: #ff4757 !default;
+
+// blueish
+$mono-darkest: #020202;
+$mono-darker: #2f3542;
+$mono-dark: #747d8c;
+$mono: #a4b0be;
+$mono-light: #ced6e0;
+$mono-lighter: #dfe4ea;
+$mono-lightest: #f1f2f6;
+
+$text-primary: rgba(0, 0, 0, 0.87);
+$text-secondary: rgba(0, 0, 0, 0.60);
+$text-disabled: rgba(0, 0, 0, 0.38);
+$text-dividers: rgba(0, 0, 0, 0.05);
+
+$inverse-text-primary: rgba(255, 255, 255, .87);
+$inverse-text-secondary: rgba(255, 255, 255, 0.6);
+$inverse-text-disabled: rgba(255, 255, 255, 0.38);
+$inverse-text-dividers: rgba(255, 255, 255, 0.12);
+
+$brand-primary-shadow: lighten($brand-primary, 43%);
+$brand-accent-shadow: lighten($brand-accent, 36%); // darken(adjust_hue($brand-accent, 5%), 10%) !default;
+$brand-success-shadow: lighten($brand-success, 48%); // darken(adjust_hue($brand-success, 5%), 10%) !default;
+$brand-warning-shadow: lighten($brand-warning, 49%); // darken(adjust_hue($brand-warning, 5%), 10%) !default;
+$brand-danger-shadow: lighten($brand-danger, 36%); // darken(adjust_hue($brand-danger, 5%), 10%) !default;
+// [END]
+
+// [START: Typography]
+$base-font-family: "Montserrat",
+sans-serif !important;
+$small-caps-multiplier: 0.75;
+
+$h1: 35px;
+$h2: 28px;
+$h3: 24px;
+$h4: 21px;
+$h5: 18px;
+$h6: 14px;
+
+$h2-small-caps: floor($h2 * $small-caps-multiplier);
+$h3-small-caps: floor($h3 * $small-caps-multiplier);
+$h4-small-caps: floor($h4 * $small-caps-multiplier);
+$h5-small-caps: floor($h5 * $small-caps-multiplier);
+$h6-small-caps: floor($h6 * $small-caps-multiplier);
+
+$paragraph: 14px;
+$paragraph-lead: 18px;
+
+$base-font-size: $paragraph;
+$base-type-unit: $base-font-size / 2;
+
+$large: floor($paragraph * 1.2);
+$medium: floor($paragraph * 0.95);
+$small: floor($paragraph * 0.9);
+$x-small: floor($paragraph * 0.75);
+$xx-small: floor($paragraph * 0.6);
+// [END]
+
+// [START: Line Heights]
+$base-line-height: floor($paragraph * 1.33);
+
+$h1-line-height: floor($h1 * 1.33);
+$h2-line-height: floor($h2 * 1.33);
+$h3-line-height: floor($h3 * 1.33);
+$h4-line-height: floor($h4 * 1.33);
+$h5-line-height: floor($h5 * 1.33);
+$h6-line-height: floor($h6 * 1.33);
+
+$h2-small-caps-line-height: floor($h2-small-caps * 1.5);
+$h3-small-caps-line-height: floor($h3-small-caps * 1.5);
+$h4-small-caps-line-height: floor($h4-small-caps * 1.5);
+$h5-small-caps-line-height: floor($h5-small-caps * 1.5);
+$h6-small-caps-line-height: floor($h6-small-caps * 1.5);
+
+$large-line-height: floor($base-line-height * 1.2);
+$medium-line-height: floor($base-line-height * 0.95);
+$small-line-height: floor($base-line-height * 0.9);
+$x-small-line-height: floor($base-line-height * 0.75);
+$xx-small-line-height: floor($base-line-height * 0.6);
+// [END]
+
+// [START: Spacing Units]
+$screen-xs-width: 600px;
+$screen-sm-width: 768px;
+$screen-md-width: 992px;
+$screen-lg-width: 1200px;
+
+$base-spacing-unit: 5px;
+$base-border-width: 1px;
+$base-border-radius: 4px;
+
+$pad-y-xxs: $base-type-unit * 0.9;
+$pad-x-xxs: $pad-y-xxs * 1.5;
+
+$pad-y-xs: $base-type-unit * 1;
+$pad-x-xs: $pad-y-xs * 1.5;
+
+$pad-y-sm: floor($base-type-unit * 1.1);
+$pad-x-sm: floor($pad-y-sm * 1.75);
+
+$pad-y-md: $base-type-unit * 1.5;
+$pad-x-md: $pad-y-md * 1.5;
+
+$pad-y-lg: $base-type-unit * 2.5;
+$pad-x-lg: $pad-y-lg * 2;
+
+$pad-xs: $pad-y-xs $pad-x-xs;
+$pad-sm: $pad-y-sm $pad-x-sm;
+$pad-md: $pad-y-md $pad-x-md;
+$pad-lg: $pad-y-lg $pad-x-lg;
+
+// Browsers take floor of line-height, as opposed to round for width / height
+$dimensions-xxs: ($pad-y-xs * 2)+$x-small-line-height;
+$dimensions-xs: ($pad-y-xs * 2)+$small-line-height;
+$dimensions-sm: ($pad-y-sm * 2)+$h5-small-caps-line-height;
+$dimensions-md: ($pad-y-md * 2)+$h5-small-caps-line-height;
+$dimensions-lg: ($pad-y-lg * 2)+$h4-small-caps-line-height;
+
+$bordered-dimensions-xxs: $dimensions-xxs+($base-border-width * 2);
+$bordered-dimensions-xs: $dimensions-xs+($base-border-width * 2);
+$bordered-dimensions-sm: $dimensions-sm+($base-border-width * 2);
+$bordered-dimensions-md: $dimensions-md+($base-border-width * 2);
+$bordered-dimensions-lg: $dimensions-lg+($base-border-width * 2);
+
+$checkbox-width-xs: $bordered-dimensions-xs - ($pad-y-xs * 2);
+$checkbox-width-sm: 22px;
+$checkbox-width-md: $bordered-dimensions-md - ($pad-y-md * 2);
+$checkbox-width-lg: $bordered-dimensions-lg - ($pad-y-lg * 2);
+
+$tooltip-opacity: 1;
+$tooltip-max-width: 200px;
+$tooltip-color: $white;
+$tooltip-bg: $mono-dark;
+$tooltip-arrow-width: 5px;
+$tooltip-arrow-color: $tooltip-bg;
+
+$num-cols: 12;
+$num-rows: 6;
+$num-spacing-units: 30;
+// [END]
+
+// [START: shared]
+$interact-border: $base-border-width solid $mono;
+$interact-border-thick: $base-border-width * 2 solid $mono;
+$divider-border: $base-border-width/2 solid $text-dividers;
+
+$z0: 100;
+$z1: 110;
+$z2: 120;
+$z3: 130;
+$z4: 140;
+$z5: 150;
+$z6: 160;
+$z7: 170;
+$z8: 180;
+$z9: 190;
+$z10: 200;
+$z100: 1000;
+$z110: 1100;
+$z120: 1200;
+$z130: 1300;
+$z140: 1400;
+$z150: 1500;
+$z160: 1600;
+$z170: 1700;
+$z180: 1800;
+$z190: 1900;
+$z200: 2000;
+$z1000: 10000;
+$z1100: 11000;
+$z1200: 12000;
+$z1300: 13000;
+$z1400: 14000;
+$z1500: 15000;
+$z1600: 16000;
+$z1700: 17000;
+$z1800: 18000;
+$z1900: 19000;
+$z2000: 20000;
+// [END]
+
+// [START: Shadows]
+$z0-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+$z1-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+$z2-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+$z3-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+$z4-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+$z5-shadow: 0 19px 38px rgba(0, 0, 0, 0.25);
+
+$right-z0-shadow: 1px 0 1.5px rgba(0, 0, 0, 0.06),
+1px 0 1px rgba(0, 0, 0, 0.12);
+$right-z1-shadow: 1px 0 3px rgba(0, 0, 0, 0.12),
+1px 0 2px rgba(0, 0, 0, 0.24);
+$right-z2-shadow: 3px 0 6px rgba(0, 0, 0, 0.16),
+3px 0 6px rgba(0, 0, 0, 0.23);
+$right-z3-shadow: 10px 0 20px rgba(0, 0, 0, 0.19),
+6px 0 6px rgba(0, 0, 0, 0.23);
+
+$left-z0-shadow: -1px 0 1.5px rgba(0, 0, 0, 0.06),
+-1px 0 1px rgba(0, 0, 0, 0.12);
+$left-z1-shadow: -1px 0 3px rgba(0, 0, 0, 0.12),
+-1px 0 2px rgba(0, 0, 0, 0.24);
+$left-z2-shadow: -3px 0 6px rgba(0, 0, 0, 0.16),
+-3px 0 6px rgba(0, 0, 0, 0.23);
+$left-z3-shadow: -10px 0 20px rgba(0, 0, 0, 0.19),
+-6px 0 6px rgba(0, 0, 0, 0.23);
+
+// Top shadows (for "bottom" positionned elements)
+$top-z1-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12),
+0 -1px 2px rgba(0, 0, 0, 0.24);
+$top-z2-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16),
+0 -3px 6px rgba(0, 0, 0, 0.23);
+$top-z3-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19),
+0 -6px 6px rgba(0, 0, 0, 0.23);
+$top-z4-shadow: 0 -14px 28px rgba(0, 0, 0, 0.25),
+0 -10px 10px rgba(0, 0, 0, 0.22);
+$top-z5-shadow: 0 -19px 38px rgba(0, 0, 0, 0.3),
+0 -15px 12px rgba(0, 0, 0, 0.22);
+
+// Shadows for full size "side" elements (using spread to make corners look right)
+$side-z1-shadow: 0 0 3px 0.75px rgba(0, 0, 0, 0.12),
+0 0 2px 0.5px rgba(0, 0, 0, 0.24);
+$side-z2-shadow: 0 0 6px 1.5px rgba(0, 0, 0, 0.16),
+0 0 6px 1.5px rgba(0, 0, 0, 0.23);
+$side-z3-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.19),
+0 0 6px 1.5px rgba(0, 0, 0, 0.23);
+$side-z4-shadow: 0 0 28px 7px rgba(0, 0, 0, 0.25),
+0 0 10px 2.5px rgba(0, 0, 0, 0.22);
+$side-z5-shadow: 0 0 38px 9.5px rgba(0, 0, 0, 0.3),
+0 0 12px 3px rgba(0, 0, 0, 0.22);
+
+// Raised button shadow (this in an approximation from  http://material-design.storage.googleapis.com/images/components-buttons-states-for-mocks-2a_large_mdpi.png)
+$raised-button-normal-shadow: 1px 2px rgba(0, 0, 0, 0.17),
+0 1px rgba(0, 0, 0, 0.16);
+$raised-button-hover-shadow: 0 1px rgba(0, 0, 0, 0.13),
+0 1px rgba(0, 0, 0, 0.16);
+$raised-button-focused-shadow: 0 5px 6px rgba(0, 0, 0, 0.15),
+0 2px 5px rgba(0, 0, 0, 0.16);
+$raised-button-pressed-shadow: 0 6px 5px rgba(0, 0, 0, 0.09),
+0 7px 6px rgba(0, 0, 0, 0.16);
+
+$inset-z0-shadow: inset 0 0 1px rgba(0, 0, 0, 0.12),
+inset 0 0 1px rgba(0, 0, 0, 0.24);
+$inset-z1-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12),
+inset 0 1px 2px rgba(0, 0, 0, 0.24);
+$inset-z2-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16),
+inset 0 3px 6px rgba(0, 0, 0, 0.23);
+// [END]
+
+// [START: Outlined table]
+$table-body-bg: transparent;
+$table-body-border-color: transparent;
+$table-header-bg: $mono-lighter;
+$table-header-color: $mono-lighter;
+$table-header-border-color: transparent;
+$table-header-body-divider-color: darken($mono-lighter, 7%);
+$table-padding: $base-spacing-unit * 2 $base-spacing-unit * 3;
+$table-input-border-color: darken($mono-lighter, 7%);
+// [END]
+
+// [START: Modal]
+$modal-sm-height: 180px;
+$modal-sm-width: 400px;
+$modal-width: 600px;
+$modal-md-width: 800px;
+$modal-header-height: $bordered-dimensions-lg;
+$modal-footer-height: $bordered-dimensions-md+$base-spacing-unit * 6;
+// [END]
+
+// [START: Card]
+$card-caret-height: $base-spacing-unit * 1;
+$card-border: $base-border-width/2 solid $mono-light;
+// [END]
+
+// [START: Switch]
+$switch-width-sm: $base-font-size;
+$switch-width-md: $base-spacing-unit * 4;
+$switch-width-lg: $base-spacing-unit * 5;
+$switch-off-bg: $mono-light;
+$switch-off-bg-shadow: $mono;
+
+$switch-off-inverse-bg: $text-disabled;
+$switch-off-inverse-bg-shadow: $text-dividers;
+// [END]

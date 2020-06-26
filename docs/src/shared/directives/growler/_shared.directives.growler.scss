@@ -1,0 +1,104 @@
+$growler-width: 500px;
+$growler-icon-size: $bordered-dimensions-xs;
+$growler-icon-container-width: $growler-icon-size+$base-spacing-unit*8;
+
+.#{$ns}growler {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $z2000;
+}
+
+.#{$ns}growl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: $white;
+  cursor: pointer;
+  max-width: $growler-width;
+  background-color: $mono-darker;
+  border: $base-border-width solid transparent;
+  box-shadow: $z1-shadow;
+  border-radius: 4px;
+  justify-content: flex-start;
+
+  &:not(:last-child) {
+    margin-bottom: $base-spacing-unit*2;
+  }
+}
+
+.#{$ns}growl__icon {
+  svg {
+    fill: $pure-white;
+
+    path,
+    polygon {
+      fill: $pure-white;
+    }
+  }
+}
+
+.#{$ns}growl__close {
+  margin-left: auto;
+
+  svg {
+    fill: $mono;
+
+    path,
+    polygon {
+      fill: $mono;
+    }
+  }
+}
+
+.#{$ns}growl--danger {
+  .#{$ns}growl__icon {
+    svg {
+      fill: $brand-danger;
+
+      path,
+      polygon {
+        fill: $brand-danger;
+      }
+    }
+  }
+}
+
+.#{$ns}growl--success {
+  .#{$ns}growl__icon {
+    svg {
+      fill: $brand-success;
+
+      path,
+      polygon {
+        fill: $brand-success;
+      }
+    }
+  }
+}
+
+.#{$ns}growl--primary {
+  .#{$ns}growl__icon {
+    svg {
+      fill: $brand-primary;
+
+      path,
+      polygon {
+        fill: $brand-primary;
+      }
+    }
+  }
+}
+
+.#{$ns}growl--warning {
+  .#{$ns}growl__icon {
+    svg {
+      fill: $brand-warning;
+
+      path,
+      polygon {
+        fill: $brand-warning;
+      }
+    }
+  }
+}

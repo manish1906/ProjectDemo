@@ -1,0 +1,88 @@
+.#{$ns}checkbox {
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px $mono-light;
+    transition: all 300ms cubic-bezier(0, 0.89, 0.44, 1);
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px $mono;
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 50%;
+        margin-top: -25%;
+        margin-left: -25%;
+        fill: $white;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJmaWxsOiAjZjlmN2Y2OyIgd2lkdGg9IjExLjM4IiBoZWlnaHQ9IjkiIHZpZXdCb3g9IjAgMCAxMS4zOCA5Ij48cG9seWdvbiBwb2ludHM9IjQuMDUgOSAwIDUuMzcgMS4zNCAzLjkgMy45NSA2LjIzIDkuOTMgMCAxMS4zOCAxLjM3IDQuMDUgOSIvPjwvc3ZnPg==) center center no-repeat;
+        background-size: 100%;
+        content: '';
+        transform: scale(0);
+        transition: all 300ms cubic-bezier(0, 0.89, 0.44, 1) 0.25s;
+    }
+
+    &+label {
+        @extend %noselect;
+        cursor: pointer;
+        vertical-align: middle;
+        color: $mono;
+    }
+
+    &.#{$ns}checkbox--bland {
+        border-radius: $base-border-radius !important;
+
+        &.#{$ns}checkbox--checked {
+            box-shadow: inset 0 0 0 $checkbox-width-xs/2 $mono !important;
+        }
+    }
+}
+
+
+.#{$ns}checkbox--checked {
+    &::after {
+        transform: scale(1);
+    }
+}
+
+.#{$ns}checkbox--xs {
+    width: $checkbox-width-xs;
+    height: $checkbox-width-xs;
+
+    &.#{$ns}checkbox--checked {
+        box-shadow: inset 0 0 0 $checkbox-width-xs/2 $brand-primary;
+    }
+}
+
+.#{$ns}checkbox--sm {
+    width: $checkbox-width-sm;
+    height: $checkbox-width-sm;
+
+    &.#{$ns}checkbox--checked {
+        box-shadow: inset 0 0 0 $checkbox-width-sm/2 $brand-primary;
+    }
+}
+
+.#{$ns}checkbox--md {
+    width: $checkbox-width-md;
+    height: $checkbox-width-md;
+
+    &.#{$ns}checkbox--checked {
+        box-shadow: inset 0 0 0 $checkbox-width-md/2 $brand-primary;
+    }
+}
+
+.#{$ns}checkbox--lg {
+    width: $checkbox-width-lg;
+    height: $checkbox-width-lg;
+
+    &.#{$ns}checkbox--checked {
+        box-shadow: inset 0 0 0 $checkbox-width-lg/2 $brand-primary;
+    }
+}

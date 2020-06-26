@@ -1,0 +1,43 @@
+.ba-popdown-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  &.ng-enter,
+  &.ng-enter-active,
+  &.ng-leave,
+  &.ng-leave-active {
+  }
+
+  &.ng-enter {
+    opacity: 0;
+  }
+
+  &.ng-enter-active {
+    opacity: 1;
+  }
+
+  &.ng-leave-active {
+    opacity: 0;
+  }
+
+  &.ng-leave {
+    opacity: 1;
+  }
+}
+
+.ba-popdown-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $pure-white;
+  z-index: $z1;
+  border-radius: $base-border-radius/1;
+  box-shadow: $z2-shadow;
+  // border: $base-border-width solid $text-dividers;
+  overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0;
+}

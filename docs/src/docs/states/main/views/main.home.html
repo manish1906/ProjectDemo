@@ -1,0 +1,23 @@
+<!-- GRID VIEW -->
+<!-- <div
+  class="main-floating-container"
+  ng-include="MainPaths.partials.nav"
+></div> -->
+
+<div>Hi main home </div> <br><br>
+
+        <ul>
+            <li ng-repeat="guidehelp in guideshelp"> 
+                <a class="rootLink item-support colorize" ui-sref='main.app.guide({guide: guidehelp.helpname})'>{{guidehelp.helpname}} </a>
+              
+
+            </li>
+        </ul>
+
+<div
+  class="main-floating-container"
+  ng-include="MainPaths.partials.footer"
+></div>
+<button ui-sref="main.app.messages.list"> Message</button>
+<!-- <div ui-view></div> -->
+        

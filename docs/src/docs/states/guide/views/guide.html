@@ -1,0 +1,58 @@
+
+
+
+<!-- <div ui-view></div> -->
+
+
+<!-- underneath you have list on left and details on right -->
+<!-- scroll -->
+<div class="main-bottom-body"> 
+<div class="contain--fill "> 
+  
+    <div class="absolute--fill users-list-left"
+     ba-pl="5"
+     ba-pt="3.5">
+
+    <!-- // version header + search or whatever -->
+    <div class="row">
+        <div>
+            Version:
+            <select
+                ng-model="guide"
+                ng-options="guide as guide.versionname for guide in versionlist | orderBy:'-versionid'"></select>
+                <br/>
+                
+        </div>
+        <!-- <div class="col-sm-12">
+            Versions
+            <select name="versionlist">
+                <option ng-repeat="option in versionlist  | orderBy:'-versionid'" value="{{option.versionid}}">{{option.versionname}}</option>
+            </select>
+        </div> -->
+    </div>
+                    <div
+                    ng-include="GuidePaths.partials.docsList"
+                    ba-px="5"
+                    ></div>
+                        <!-- list of document list -->
+        
+    <!-- END -->
+    <!-- </div> -->
+
+    <!-- // document detail content -->
+            <div
+            class="absolute--fill users-list-right"
+            ba-px="5"
+            ba-pt="3.5"
+            ng-show='false'>
+            <div
+                ng-include="GuidePaths.partials.docsDetails"
+                ba-px="5"
+                >
+            </div>
+            </div>
+</div>
+
+</div>
+
+<!-- <div ui-view></div> -->

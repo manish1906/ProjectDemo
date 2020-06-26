@@ -1,0 +1,133 @@
+$base-radio-border-width: $base-border-width * 2;
+$radio-width-sm: $bordered-dimensions-xs / 1.5;
+$radio-width-md: $bordered-dimensions-md / 1.5;
+$radio-width-lg: $bordered-dimensions-lg / 1.5;
+$radio-off-bg: $mono-light;
+$radio-off-bg-shadow: $mono;
+
+@mixin radio-size($radio-width) {
+  height: $radio-width;
+  width: $radio-width;
+  border: $base-radio-border-width * 2 solid $white;
+
+  // Switch
+  &::before {
+    // Room for 2px border
+    width: $radio-width - ($base-radio-border-width * 8);
+    height: $radio-width - ($base-radio-border-width * 8);
+    border-width: $base-radio-border-width * 2;
+    border-style: solid;
+    top: -$base-radio-border-width * 1;
+    left: -$base-radio-border-width * 1;
+  }
+}
+
+@mixin radio-skin($color, $color-shadow: adjust_hue(darken($color, 10%), 7%)) {
+  .#{$ns}radio.#{$ns}radio--active {
+    &::before {
+      background: $color;
+      border-color: $color-shadow;
+    }
+  }
+}
+
+.#{$ns}radio-group {
+  position: relative;
+}
+
+.#{$ns}radio-group--circle {
+  .#{$ns}radio {
+    border-radius: 50%;
+
+    &::before {
+      border-radius: 50%;
+    }
+  }
+}
+
+.#{$ns}radio {
+  position: relative;
+  display: inline-block;
+  background: $mono-light;
+  cursor: pointer;
+  vertical-align: middle;
+  border: $base-radio-border-width * 2 solid $mono;
+
+  &:hover {
+    border: $base-radio-border-width * 2 solid darken($mono, 10%);
+  }
+
+  &:active {
+    background: darken($mono-light, 5%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-color: $switch-off-bg-shadow;
+    background: $switch-off-bg;
+    transform: scale(0);
+    transition: transform 0.15s ease-in-out;
+  }
+
+  &+label {
+    vertical-align: middle;
+  }
+}
+
+.#{$ns}radio--active {
+  &::before {
+    transform: scale(1);
+    transition: transform 0.15s ease-in-out;
+    //    display: block;
+  }
+}
+
+.#{$ns}radio-group--sm {
+  .#{$ns}radio {
+    @include radio-size($radio-width-sm);
+
+    &+label {
+      @extend %sm-paragraph;
+      line-height: $radio-width-sm;
+    }
+  }
+}
+
+.#{$ns}radio-group--md {
+  .#{$ns}radio {
+    @include radio-size($radio-width-md);
+
+    &+label {
+      @extend %md-paragraph;
+      line-height: $radio-width-md;
+    }
+  }
+}
+
+.#{$ns}radio-group--lg {
+  .#{$ns}radio {
+    @include radio-size($radio-width-lg);
+
+    &+label {
+      @extend %lg-paragraph;
+      line-height: $radio-width-lg;
+    }
+  }
+}
+
+.#{$ns}radio-group--primary {
+  @include radio-skin($brand-primary, $brand-primary-shadow);
+}
+
+.#{$ns}radio-group--success {
+  @include radio-skin($brand-success, $brand-success-shadow);
+}
+
+.#{$ns}radio-group--warning {
+  @include radio-skin($brand-warning, $brand-warning-shadow);
+}
+
+.#{$ns}radio-group--danger {
+  @include radio-skin($brand-danger, $brand-danger-shadow);
+}

@@ -1,0 +1,45 @@
+@import "shared.base.variables";
+
+@mixin screen-xs {
+  @media (max-width: #{$screen-xs-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin screen-sm {
+  @media (min-width: #{$screen-xs-width}) and (max-width: #{$screen-sm-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: #{$screen-sm-width}) and (max-width: #{$screen-md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: #{$screen-md-width}) and (max-width: #{$screen-lg-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: #{$screen-lg-width}) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  display: block;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity: 1) {
+  opacity: $opacity;
+}

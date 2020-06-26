@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns:ng="http://angularjs.org" xmlns:app="ignored">
+  <!--<![endif]-->
+
+  <head>
+    <link rel="icon" href="/src/docs/assets/imgs/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>BoardActive</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- // google sign in -->
+    <!-- <meta name="google-signin-client_id" content="505392227415-prnge2jgvp07bi7cpguvvuvauudvqh0r.apps.googleusercontent.com"> -->
+    <!--<base href="/">-->
+
+    <!-- FOR mock backend -->
+  </head>
+
+  <body>
+    <!-- build:css(.) /assets/css/build.css -->
+    <link
+      rel="stylesheet"
+      href="/node_modules/angular-hotkeys/build/hotkeys.min.css"
+    />
+    <link rel="stylesheet" href="/src/shared/shared.css" />
+    <link rel="stylesheet" href="/src/docs/styles/main.css" />
+    <!-- endbuild -->
+
+    <div class="view">
+      <div ui-view></div>
+    </div>
+
+    <!-- build:js(.) /assets/js/build.js -->
+    <!-- [START: npm] -->
+    <!-- google maps here currently because autocomplete needs places and it looks like the google-maps-native does not include it even when URL specifies -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKvWgkdk06Ic-vnxc8dV4IsqGOl7xh4s0&libraries=geometry,drawing,places"></script> -->
+    <!-- -->
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <!-- TODO <script src="/node_modules/jquery-ui.1.11.1/ui/core.js"></script> -->
+    <script src="/node_modules/lz-string/libs/lz-string.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-intercom/angular-intercom.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/node_modules/angular-google-maps-native/dist/angular-google-maps-native.js"></script>
+    <script src="/node_modules/ngstorage/ngStorage.js"></script>
+    <script src="/node_modules/greensock/src/TweenMax.js"></script>
+    <script src="/node_modules/greensock/src/plugins/CSSPlugin.js"></script>
+    <script src="/node_modules/tinycolor2/tinycolor.js"></script>
+    <script src="/node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
+    <script src="/node_modules/lodash/lodash.js"></script>
+    <script src="/node_modules/vsGoogleAutocomplete/dist/vs-google-autocomplete.js"></script>
+    <!-- [END] -->
+
+    <!-- [START: Core] -->
+    <script src="/src/docs/core/core.js"></script>
+    <script src="/src/docs/core/core.paths.js"></script>
+    <script src="/src/docs/core/filters/core.filters.js"></script>
+    <script src="/src/docs/core/directives/core.directives.js"></script>
+    <script src="/src/docs/core/services/core.services.js"></script>
+    <script src="/src/docs/core/services/core.services.alerts.js"></script>
+    <script src="/src/docs/core/services/core.services.billing.js"></script>
+    <script src="/src/docs/core/services/core.services.colors.js"></script>
+    <script src="/src/docs/core/services/core.services.document-util.js"></script>
+    <script src="/src/docs/core/services/core.services.events.js"></script>
+    <script src="/src/docs/core/services/core.services.tracking.js"></script>
+    <!-- [END] -->
+
+    <!-- [START: Shared] -->
+    <script src="/src/shared/shared.js"></script>
+    <script src="/src/shared/shared.templates.js"></script>
+    <script src="/src/shared/shared.paths.js"></script>
+    <script src="/src/shared/util/shared.util.js"></script>
+    <script src="/src/shared/util/shared.util.bus.js"></script>
+    <script src="/src/shared/util/shared.util.cache.js"></script>
+    <script src="/src/shared/util/shared.util.dateparser.js"></script>
+    <script src="/src/shared/util/shared.util.debounce.js"></script>
+    <script src="/src/shared/util/shared.util.escape-stack.js"></script>
+    <script src="/src/shared/util/shared.util.position.js"></script>
+    <script src="/src/shared/util/shared.util.transition.js"></script>
+    <script src="/src/shared/directives/actions-menu/shared.directions.actions-menu.js"></script>
+    <script src="/src/shared/directives/checkbox/shared.directives.checkbox.js"></script>
+    <script src="/src/shared/directives/datepicker/shared.directives.datepicker.js"></script>
+    <script src="/src/shared/directives/dropdown/shared.directives.dropdown.js"></script>
+    <script src="/src/shared/directives/growler/shared.directives.growler.js"></script>
+    <script src="/src/shared/directives/modal/shared.directives.modal.js"></script>
+    <script src="/src/shared/directives/svg/shared.directives.svg.js"></script>
+    <script src="/src/shared/directives/popdown/shared.directives.popdown.js"></script>
+    <script src="/src/shared/directives/slider/shared.directives.slider.js"></script>
+    <script src="/src/shared/directives/switch/shared.directives.switch.js"></script>
+    <script src="/src/shared/directives/timepicker/shared.directives.timepicker.js"></script>
+    <script src="/src/shared/directives/tooltip/shared.directives.tooltip.js"></script>
+    <script src="/src/shared/directives/transition-mask/shared.directives.transition-mask.js"></script>
+    <script src="/src/shared/directives/typeahead/shared.directives.typeahead.js"></script>
+    <!-- [END] -->
+
+    <!-- [START: docs] -->
+    <script src="/src/docs/states/main/main.js"></script>
+    <script src="/src/docs/docs.templates.js"></script>
+    <script src="/src/docs/docs.templates.svg.js"></script>
+
+    <script src="/src/docs/states/main/main.config.js"></script>
+    <script src="/src/docs/states/main/main.controllers.js"></script>
+    <script src="/src/docs/states/main/main.paths.js"></script>
+    <script src="/src/docs/states/main/main.states.js"></script>
+
+    <script src="/src/docs/states/guide/guide.config.js"></script>
+    <script src="/src/docs/states/guide/guide.paths.js"></script>
+    <script src="/src/docs/states/guide/guide.states.js"></script>
+    <script src="/src/docs/states/guide/guide.controllers.js"></script>
+
+    
+    
+    <script src="/src/docs/states/messages/messages.js"></script>
+    <script src="/src/docs/states/messages/messages.config.js"></script>
+   
+    <script src="/src/docs/states/messages/messages.paths.js"></script>
+    <script src="/src/docs/states/messages/messages.states.js"></script>
+    <script src="/src/docs/states/messages/messages.controllers.js"></script>
+    <script src="/src/docs/states/messages/messages.services.js"></script>
+
+    <script src="/src/docs/states/users/users.config.js"></script>
+    <script src="/src/docs/states/users/users.controllers.js"></script>
+   
+    <script src="/src/docs/states/users/users.paths.js"></script>
+    <script src="/src/docs/states/users/users.states.js"></script>
+    <!-- [END] -->
+
+    <script src="/src/docs/environments/environments.local.js"></script>
+    <script src="/src/docs/states/main/bootstrap.js"></script>
+
+    <!-- @endif -->
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<ul class="ba-dropdown-menu" ba-pxy="1" ng-if="isOpen" style="display: block; max-height: 400px;" ng-style="{top: position.top+'px', left: position.left+'px'}"
+    ng-keydown="keydown($event)" ng-click="$event.stopPropagation()">
+    <li ng-transclude></li>
+    <li ng-if="showButtonBar" ba-pxy="2">
+        <span class="btn-group pull-left">
+            <button type="button" class="ba-btn-o-mono ba-btn--xs" ng-click="select('today')">{{ getText('current') }}</button>
+            <button type="button" class="ba-btn-o-mono ba-btn--xs" ng-click="select(null)">{{ getText('clear') }}</button>
+        </span>
+        <button type="button" class="ba-btn-primary ba-btn--xs" ba-pull="right" ng-click="close()">{{
+            getText('close') }}</button>
+    </li>
+</ul>

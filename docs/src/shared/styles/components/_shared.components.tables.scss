@@ -1,0 +1,160 @@
+$toolbar-side-width: 324px;
+
+.main-table {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  // box-shadow: $z1-shadow;
+  border: $base-border-width solid $mono-lighter;
+  // border-top: $base-border-width solid $mono-lighter;
+  // border-left: $base-border-width solid $mono-lighter;
+  // border-right: $base-border-width solid $mono-lighter;
+  border-radius: $base-border-radius;
+}
+
+.main-table-row {
+  @extend %p;
+  position: relative;
+  box-shadow: inset 0 -1px $text-dividers;
+
+  &:last-child {
+    box-shadow: none;
+    // border-bottom: $base-border-width * 2 solid $mono-lighter;
+  }
+
+  &[disabled="disabled"] {
+    pointer-events: none;
+  }
+
+  &:hover {
+    .main-table-row--interact {
+      color: $brand-primary !important;
+    }
+  }
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $bordered-dimensions-lg;
+  background: $white;
+
+  &.toolbar--md {
+    height: $bordered-dimensions-md !important;
+  }
+
+  &.toolbar--split {
+    .toolbar__left {
+      position: absolute;
+      height: $bordered-dimensions-lg;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 50%;
+      width: 100%;
+    }
+
+    .toolbar__right {
+      position: absolute;
+      height: $bordered-dimensions-lg;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  .toolbar__left {
+    position: absolute;
+    height: $bordered-dimensions-lg;
+    width: $toolbar-side-width;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .toolbar__middle {
+    position: absolute;
+    height: $bordered-dimensions-lg;
+    top: 0;
+    bottom: 0;
+    left: $toolbar-side-width;
+    right: $toolbar-side-width;
+  }
+
+  .toolbar__right {
+    position: absolute;
+    height: $bordered-dimensions-lg;
+    width: $toolbar-side-width;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    &.toolbar__right-mobile {
+      display: none !important;
+    }
+  }
+
+  //give middle toolbar more space in mobile
+  @media (max-width: 1024px) {
+    .toolbar__left {
+      width: $toolbar-side-width/2;
+    }
+
+    .toolbar__middle {
+      left: $toolbar-side-width/2;
+      right: $toolbar-side-width/2;
+    }
+
+    .toolbar__right {
+      width: $toolbar-side-width/2;
+    }
+  }
+
+  // 1036 is when placeholder in input goes to ellipsis
+  @media (max-width: 1024px) {
+    .toolbar__right-desktop {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .toolbar__right {
+      &.toolbar__right-mobile {
+        display: flex !important;
+      }
+    }
+  }
+
+  // TODO hardcoding.. but looks fly - for message tabs
+  .toolbar-tab {
+    @extend %p;
+    @extend %x-small;
+
+    color: $text-secondary;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: $base-border-width * 2 solid transparent;
+
+    &:hover:not(.toolbar-tab--active) {
+      color: $text-primary;
+      border-bottom: $base-border-width * 2 solid $mono;
+    }
+
+    &.toolbar-tab--active {
+      @extend %semi-bold;
+      color: $brand-primary;
+      border-bottom: $base-border-width * 2 solid $brand-primary;
+    }
+
+    transition: all 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,233 @@
+.#{$ns}svg {
+  display: inline-block !important;
+  fill: $mono;
+  vertical-align: middle;
+  line-height: 0;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  min-height: 24px;
+}
+
+.#{$ns}svg-sm {
+  display: inline-block !important;
+  fill: $mono;
+  vertical-align: middle;
+  line-height: 0;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+}
+
+.#{$ns}svg-xs {
+  display: inline-block !important;
+  fill: $mono;
+  vertical-align: middle;
+  line-height: 0;
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  min-height: 16px;
+}
+
+.#{$ns}svg-xxs {
+  display: inline-block !important;
+  fill: $mono;
+  vertical-align: middle;
+  line-height: 0;
+  width: 12px;
+  min-width: 12px;
+  height: 12px;
+  min-height: 12px;
+}
+
+
+.#{$ns}svg-xxxs {
+  display: inline-block !important;
+  fill: $mono;
+  vertical-align: middle;
+  line-height: 0;
+  width: 10px;
+  min-width: 10px;
+  height: 10px;
+  min-height: 10px;
+}
+
+.#{$ns}svg-lg {
+  display: inline-block !important;
+  fill: $mono;
+  vertical-align: middle;
+  line-height: 0;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+}
+
+
+.#{$ns}svg-xl {
+  display: inline-block !important;
+  // fill: $mono; commented out for settings
+  vertical-align: middle;
+  line-height: 0;
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  min-height: 64px;
+}
+
+.#{$ns}svg-btn {
+  display: inline-block;
+  cursor: pointer;
+
+  &>svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $mono-light;
+    display: block;
+  }
+
+  &:hover {
+
+    &>svg,
+    path,
+    use,
+    polygon,
+    rect,
+    g {
+      fill: $mono;
+    }
+  }
+
+  &[disabled="disabled"] {
+    pointer-events: none;
+    cursor: default;
+
+    &>svg,
+    path,
+    use,
+    polygon,
+    rect,
+    g {
+      fill: $mono-lighter !important;
+    }
+  }
+
+  &.#{$ns}svg-btn--primary {
+    &:hover {
+
+      &>svg,
+      path,
+      use,
+      polygon,
+      rect,
+      g {
+        fill: $brand-primary !important;
+      }
+    }
+  }
+
+  &.#{$ns}svg-btn--danger {
+    &:hover {
+
+      &>svg,
+      path,
+      use,
+      polygon,
+      rect,
+      g {
+        fill: $brand-danger !important;
+      }
+    }
+  }
+
+  &.#{$ns}svg-btn--success {
+    &:hover {
+
+      &>svg,
+      path,
+      use,
+      polygon,
+      rect,
+      g {
+        fill: $brand-success !important;
+      }
+    }
+  }
+
+  &.#{$ns}svg-btn--mono {
+
+    &>svg,
+    path,
+    use,
+    polygon,
+    rect,
+    g {
+      fill: $mono;
+    }
+
+    &:hover {
+
+      &>svg,
+      path,
+      use,
+      polygon,
+      rect,
+      g {
+        fill: $mono-dark;
+      }
+    }
+
+    &[disabled="disabled"] {
+
+      &>svg,
+      path,
+      use,
+      polygon,
+      rect,
+      g {
+        fill: $mono-light !important;
+      }
+    }
+  }
+}
+
+.#{$ns}svg-btn--active {
+
+  &>svg,
+  path,
+  use,
+  polygon,
+  rect,
+  g {
+    fill: $brand-primary;
+  }
+
+  &:hover {
+
+    &>svg,
+    path,
+    use,
+    polygon,
+    rect,
+    g {
+      fill: $brand-primary-shadow;
+    }
+  }
+}
+
+.#{$ns}svg-btn--sm {
+  height: $bordered-dimensions-sm;
+}
+
+.#{$ns}svg-btn--md {
+  height: $bordered-dimensions-md;
+}
+
+.#{$ns}svg-btn--lg {
+  height: $bordered-dimensions-lg;
+}

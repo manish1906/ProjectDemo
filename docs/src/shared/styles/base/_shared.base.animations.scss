@@ -1,0 +1,143 @@
+$animation-speed-0: 0.15s;
+$animation-speed-1: 0.2s;
+$animation-speed-2: 0.25s;
+$animation-speed-3: 0.3s;
+
+
+// TODO -- for filters on users list view
+.part-fade {
+  // &.ng-hide-add,
+  // &.ng-hide-add-active,
+  // &.ng-enter,
+  // &.ng-enter-active,
+  // &.ng-enter-active {
+  //   transition: opacity ease-in-out $animation-speed-3;
+  // }
+
+  
+  // &.ng-hide-remove-active,
+  // &.ng-hide-remove,
+  // &.ng-leave {
+  //   transition: none !important;
+  // }
+
+  // &.ng-hide-add,
+  // &.ng-leave {
+  //   opacity: 1;
+
+  //   &.ng-hide-add-active,
+  //   &.ng-leave-active {
+  //     opacity: .54;
+  //   }
+  // }
+
+  // &.ng-hide-remove,
+  // &.ng-enter {
+  //   opacity: .54;
+
+  //   &.ng-hide-remove-active,
+  //   &.ng-enter-active {
+  //     opacity: 1;
+  //   }
+  // }
+}
+
+
+.slow-fade {
+  &.ng-hide-add,
+  &.ng-hide-add-active,
+  &.ng-hide-remove-active,
+  &.ng-hide-remove,
+  &.ng-enter,
+  &.ng-enter-active,
+  &.ng-leave,
+  &.ng-enter-active {
+    transition: opacity ease-in-out $animation-speed-3;
+  }
+
+  &.ng-hide-add,
+  &.ng-leave {
+    opacity: 1;
+
+    &.ng-hide-add-active,
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+
+  &.ng-hide-remove,
+  &.ng-enter {
+    opacity: 0;
+
+    &.ng-hide-remove-active,
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+}
+
+.a-fade {
+  &.ng-hide-add,
+  &.ng-hide-add-active,
+  &.ng-hide-remove-active,
+  &.ng-hide-remove,
+  &.ng-enter,
+  &.ng-enter-active,
+  &.ng-leave,
+  &.ng-enter-active {
+    transition: opacity ease-in-out $animation-speed-1;
+  }
+
+  &.ng-hide-add,
+  &.ng-leave {
+    opacity: 1;
+
+    &.ng-hide-add-active,
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+
+  &.ng-hide-remove,
+  &.ng-enter {
+    opacity: 0;
+
+    &.ng-hide-remove-active,
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+}
+
+.b-fade {
+  &.ng-hide-add,
+  &.ng-hide-add-active,
+  &.ng-hide-remove-active,
+  &.ng-hide-remove,
+  &.ng-enter,
+  &.ng-enter-active,
+  &.ng-leave,
+  &.ng-enter-active {
+    transition: opacity ease-in-out $animation-speed-0;
+  }
+
+  &.ng-hide-add,
+  &.ng-leave {
+    opacity: .85;
+
+    &.ng-hide-add-active,
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+
+  &.ng-hide-remove,
+  &.ng-enter {
+    opacity: 0;
+
+    &.ng-hide-remove-active,
+    &.ng-enter-active {
+      opacity: .85;
+    }
+  }
+}

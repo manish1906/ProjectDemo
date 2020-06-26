@@ -1,0 +1,57 @@
+$datepicker-day-width: 24px;
+
+.#{$ns}datepicker-header th {
+  vertical-align: middle;
+}
+
+.#{$ns}datepicker-date {
+  width: calc(100%/7);
+}
+
+.#{$ns}datepicker-month {
+  width: calc(100%/3);
+}
+
+.#{$ns}datepicker-year {
+  width: calc(100%/5);
+}
+
+.#{$ns}datepicker-btn--day {
+  padding: 0 !important;
+  display: block;
+  margin: 0 auto;
+  min-height: $datepicker-day-width;
+  width: $datepicker-day-width;
+  font-weight: 600;
+
+  &.#{$ns}btn--active {
+    background-color: $brand-primary !important;
+    color: $pure-white !important;
+    border-radius: 50% !important;
+  }
+
+  &[disabled="disabled"] {
+    text-decoration: line-through;
+  }
+}
+
+.#{$ns}datepicker-btn--month {
+  padding: 0 !important;
+  display: block;
+  margin: 0 auto;
+  min-height: $datepicker-day-width;
+}
+
+.dt.selected {
+  color: $brand-primary;
+}
+
+.ba-datepicker-date--secondary {
+  color: $mono-lighter;
+  font-weight: 400;
+}
+
+.ba-datepicker-date--current {
+  @extend %bold;
+  color: $brand-warning;
+}

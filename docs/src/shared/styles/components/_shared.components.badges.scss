@@ -1,0 +1,76 @@
+.#{$ns}badge {
+  @extend %h6;
+  // @extend %small-caps;
+  @extend %bold;
+  border-radius: $base-border-radius;
+  color: $white;
+  padding: $pad-xs;
+  display: inline-block;
+  box-shadow: $z0-shadow;
+  // box-shadow: $inset-z0-shadow;
+}
+
+.#{$ns}badge--sm {
+  font-size: 8px;
+  line-height: 0;
+  border-radius: $base-border-radius/2;
+  height: $base-spacing-unit * 4;
+  padding: $base-spacing-unit * 2;
+}
+
+// TODO refactor --sm to use less width
+.#{$ns}badge--xs {
+  font-size: 8px;
+  line-height: 0;
+  border-radius: $base-border-radius/2;
+  height: $base-spacing-unit * 3;
+  padding-top: ($base-spacing-unit * 3)/2;
+  padding-bottom: ($base-spacing-unit * 3)/2;
+  padding-left: $base-spacing-unit;
+  padding-right: $base-spacing-unit;
+}
+
+.#{$ns}badge--pointer {
+  cursor: pointer;
+}
+
+.#{$ns}badge--interact {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+
+.#{$ns}badge--white {
+  color: $brand-accent;
+  background: $white;
+}
+
+.#{$ns}badge--disabled {
+  background: $mono-lightest;
+}
+
+.#{$ns}badge--mono {
+  background: $mono-light;
+}
+
+.#{$ns}badge--accent {
+  background: $brand-accent;
+}
+
+.#{$ns}badge--primary {
+  background: $brand-primary;
+}
+
+.#{$ns}badge--success {
+  background: $brand-success;
+}
+
+.#{$ns}badge--warning {
+  background: $brand-warning;
+}
+
+.#{$ns}badge--danger {
+  background: $brand-danger;
+}

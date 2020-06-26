@@ -1,0 +1,81 @@
+@import "../../shared/styles/base/shared.base.variables";
+@import "../../shared/styles/base/shared.base.placeholders";
+@import "../../shared/styles/base/shared.base.mixins";
+
+@import "environments/environments";
+
+@import "main.inbox";
+@import "main.nav";
+@import "main.backgrounds";
+
+$main-left-width: 256px;
+$main-header-height: 64px;
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url($path-assets+"fonts/Montserrat-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+body,
+html {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  font-size: 10px;
+  background: $pure-white;
+  font-family: $base-font-family;
+  color: $mono-darker;
+}

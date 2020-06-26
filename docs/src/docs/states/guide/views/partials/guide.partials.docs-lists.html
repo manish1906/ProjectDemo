@@ -1,0 +1,43 @@
+<div ba-c-fill="pure-white"
+         ba-border="all round mono-lighter"
+         ba-flexbox="col"
+         ba-py="md">
+    
+<div ba-flex>
+    <div ba-flexbox="row y-center x-between" ba-px="sm">
+        <div ba-flex="2" ba-text="small-caps bold h6" ba-c-text="1">
+            Documents
+        </div>
+    </div>
+    <div ng-if="doclist.length" ba-mt=".5">
+        <div ng-repeat="doc in doclist"
+             ba-py=".5"
+             ba-px="sm"
+             dropdown-actions-container
+             class="users-nav-item"
+             ng-class="{'users-nav-item--active': doc.docid == 1}"
+             tooltip="{{ doc.docname }}"
+             tooltip-popup-delay="1500"
+             ng-click="goDoc(doc)">
+            <div ba-flexbox="y-center x-between">
+                <div ba-flex="1" class="users-nav-item__title">
+                    {{ doc.docname }}
+                    <!-- <a class="rootLink item-support colorize" ui-sref='main.guide.details({version:doc.versionname,doc: doc.docname})'>{{doc.docname}} </a> -->
+                    <!-- <a class="rootLink item-support colorize" ui-sref='::MainStates.guide({guide: guidehelp.helpname})'>{{guidehelp.helpname}} </a> -->
+                
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div ui-view></div>
+ <!-- <div ba-ml=".5"
+                     ba-svg="navigation-menu-horizontal"
+                     ba-flexbox="y-center"
+                     class="users-nav-item__actions ba-svg-btn ba-svg-xs"
+                     dropdown-actions
+                     actions-list="doclist"
+                     actions-item="doc">
+                </div> -->

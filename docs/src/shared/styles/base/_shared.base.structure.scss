@@ -1,0 +1,453 @@
+.contain {
+  position: relative;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.contain--fill {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.absolute--fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+
+  // TODO yikes. move
+  &.absolute--fill-toolbar {
+    top: $bordered-dimensions-lg;
+  }
+
+  &.absolute--fill-toolbar-md {
+    top: $bordered-dimensions-md;
+  }
+}
+
+// [START: Begin basic spacing]
+@mixin generate-spacing($i) {
+
+  // Margins
+  [#{$ns}mxy~="#{$i}"] {
+    margin: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}mx~="#{$i}"] {
+    margin-left: $base-spacing-unit * $i;
+    margin-right: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}my~="#{$i}"] {
+    margin-top: $base-spacing-unit * $i;
+    margin-bottom: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}ml~="#{$i}"] {
+    margin-left: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}mr~="#{$i}"] {
+    margin-right: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}mt~="#{$i}"] {
+    margin-top: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}mb~="#{$i}"] {
+    margin-bottom: $base-spacing-unit * $i;
+  }
+
+  // Padding
+  [#{$ns}pxy~="#{$i}"] {
+    padding: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}px~="#{$i}"] {
+    padding-left: $base-spacing-unit * $i;
+    padding-right: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}py~="#{$i}"] {
+    padding-top: $base-spacing-unit * $i;
+    padding-bottom: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}pl~="#{$i}"] {
+    padding-left: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}pr~="#{$i}"] {
+    padding-right: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}pt~="#{$i}"] {
+    padding-top: $base-spacing-unit * $i;
+  }
+
+  [#{$ns}pb~="#{$i}"] {
+    padding-bottom: $base-spacing-unit * $i;
+  }
+
+  // Gutters
+  [#{$ns}gutter~="#{$i}"] {
+    margin-left: -($base-spacing-unit * $i) / 2;
+    margin-right: -($base-spacing-unit * $i) / 2;
+
+    &>[#{$ns}col],
+    &>[#{$ns}flex] {
+      padding-left: ($base-spacing-unit * $i) / 2;
+      padding-right: ($base-spacing-unit * $i) / 2;
+    }
+  }
+
+  [#{$ns}width~="#{$i}"] {
+    width: $base-spacing-unit * 10 * $i !important;
+  }
+
+  [#{$ns}max-width~="#{$i}"] {
+    max-width: $base-spacing-unit * 10 * $i !important;
+  }
+
+  [#{$ns}height~="#{$i}"] {
+    height: $base-spacing-unit * 10 * $i !important;
+  }
+
+  [#{$ns}max-height~="#{$i}"] {
+    max-height: $base-spacing-unit * 10 * $i !important;
+  }
+}
+
+@for $i from -$num-spacing-units through $num-spacing-units {
+  @include generate-spacing($i);
+  @include generate-spacing($i + 0.5);
+}
+
+@for $i from 1 through $num-cols {
+
+  [#{$ns}col~="#{$i}"],
+  .#{$ns}col-#{$i} {
+    width: (100% / $num-cols) * $i;
+  }
+
+  [#{$ns}flex~="#{$i}"],
+  .#{$ns}flex-#{$i} {
+    flex: $i;
+  }
+
+  [#{$ns}col-offset~="#{$i}"],
+  .#{$ns}col-offset-#{$i} {
+    margin-left: (100% / $num-cols) * $i;
+  }
+
+  @media screen and (max-width: 1200px) {
+
+    [#{$ns}col-md~="#{$i}"],
+    .#{$ns}col-md-#{$i} {
+      width: (100% / $num-cols) * $i !important;
+    }
+  }
+}
+
+[#{$ns}row],
+.#{$ns}row {
+  @include clearfix();
+}
+
+// [END]
+
+// [START: Padding]
+[#{$ns}px~="xs"] {
+  padding-left: $pad-x-xs;
+  padding-right: $pad-x-xs;
+}
+
+[#{$ns}py~="xs"] {
+  padding-top: $pad-y-xs;
+  padding-bottom: $pad-y-xs;
+}
+
+[#{$ns}pt~="xs"] {
+  padding-top: $pad-y-xs;
+}
+
+[#{$ns}pb~="xs"] {
+  padding-bottom: $pad-y-xs;
+}
+
+[#{$ns}pxy~="xs"] {
+  padding: $pad-xs;
+}
+
+[#{$ns}py~="sm"] {
+  padding-top: $pad-y-xs;
+  padding-bottom: $pad-y-xs;
+}
+
+[#{$ns}pxy~="sm"] {
+  padding: $pad-sm;
+}
+
+[#{$ns}pl~="sm"] {
+  padding-left: $pad-x-sm;
+}
+
+[#{$ns}pr~="sm"] {
+  padding-right: $pad-x-sm;
+}
+
+[#{$ns}px~="sm"] {
+  padding-left: $pad-x-sm;
+  padding-right: $pad-x-sm;
+}
+
+[#{$ns}py~="sm"] {
+  padding-top: $pad-y-sm;
+  padding-bottom: $pad-y-sm;
+}
+
+[#{$ns}pt~="xs"] {
+  padding-top: $pad-y-xs;
+}
+
+[#{$ns}pt~="sm"] {
+  padding-top: $pad-y-sm;
+}
+
+[#{$ns}pt~="md"] {
+  padding-top: $pad-y-md;
+}
+
+[#{$ns}pb~="xs"] {
+  padding-bottom: $pad-y-xs;
+}
+
+[#{$ns}pb~="sm"] {
+  padding-bottom: $pad-y-sm;
+}
+
+[#{$ns}pb~="md"] {
+  padding-bottom: $pad-y-md;
+}
+
+[#{$ns}pxy~="md"] {
+  padding: $pad-md;
+}
+
+[#{$ns}px~="md"] {
+  padding-left: $pad-x-md;
+  padding-right: $pad-x-md;
+}
+
+[#{$ns}py~="md"] {
+  padding-top: $pad-y-md;
+  padding-bottom: $pad-y-md;
+}
+
+[#{$ns}pxy~="lg"] {
+  padding: $pad-lg;
+}
+
+[#{$ns}px~="lg"] {
+  padding-left: $pad-x-lg;
+  padding-right: $pad-x-lg;
+}
+
+[#{$ns}py~="lg"] {
+  padding-top: $pad-y-lg;
+  padding-bottom: $pad-y-lg;
+}
+
+// [END]
+
+// [START: Margin]
+[#{$ns}mx~="xs"] {
+  margin-left: $pad-x-xs;
+  margin-right: $pad-x-xs;
+}
+
+[#{$ns}my~="xs"] {
+  margin-top: $pad-y-xs;
+  margin-bottom: $pad-y-xs;
+}
+
+[#{$ns}mt~="xs"] {
+  margin-top: $pad-y-xs;
+}
+
+[#{$ns}mb~="xs"] {
+  margin-bottom: $pad-y-xs;
+}
+
+[#{$ns}mb~="lg"] {
+  margin-bottom: $pad-y-lg;
+}
+
+[#{$ns}mxy~="xs"] {
+  margin: $pad-xs;
+}
+
+[#{$ns}my~="sm"] {
+  margin-top: $pad-y-xs;
+  margin-bottom: $pad-y-xs;
+}
+
+[#{$ns}mxy~="sm"] {
+  margin: $pad-sm;
+}
+
+[#{$ns}mx~="sm"] {
+  margin-left: $pad-x-sm;
+  margin-right: $pad-x-sm;
+}
+
+[#{$ns}my~="sm"] {
+  margin-top: $pad-y-sm;
+  margin-bottom: $pad-y-sm;
+}
+
+[#{$ns}mt~="sm"] {
+  margin-top: $pad-y-sm;
+}
+
+[#{$ns}mb~="sm"] {
+  margin-bottom: $pad-y-sm;
+}
+
+[#{$ns}mxy~="md"] {
+  margin: $pad-md;
+}
+
+[#{$ns}mx~="md"] {
+  margin-left: $pad-x-md;
+  margin-right: $pad-x-md;
+}
+
+[#{$ns}my~="md"] {
+  margin-top: $pad-y-md;
+  margin-bottom: $pad-y-md;
+}
+
+[#{$ns}mxy~="lg"] {
+  margin: $pad-md;
+}
+
+[#{$ns}mx~="lg"] {
+  margin-left: $pad-x-lg;
+  margin-right: $pad-x-lg;
+}
+
+[#{$ns}my~="lg"] {
+  margin-top: $pad-y-lg;
+  margin-bottom: $pad-y-lg;
+}
+
+// [END]
+
+// [START: floats]
+[#{$ns}pull~="right"] {
+  float: right;
+}
+
+[#{$ns}pull~="left"] {
+  float: left;
+}
+
+// [END]
+
+// [START: Display]
+.block,
+[#{$ns}block] {
+  display: block !important;
+}
+
+.inline-block,
+[#{$ns}inline-block] {
+  display: inline-block !important;
+}
+
+// [END]
+
+// [START: Flex layout]
+[#{$ns}flexbox] {
+  display: flex !important;
+}
+
+[#{$ns}flexbox~="col"] {
+  flex-direction: column;
+}
+
+[#{$ns}flexbox~="row"] {
+  flex-direction: row;
+}
+
+[#{$ns}flexbox~="y-center"] {
+  align-items: center;
+}
+
+[#{$ns}flexbox~="y-start"] {
+  align-items: flex-start;
+}
+
+[#{$ns}flexbox~="y-end"] {
+  align-items: flex-end;
+}
+
+[#{$ns}flexbox~="y-baseline"] {
+  align-items: baseline;
+}
+
+[#{$ns}flexbox~="x-center"] {
+  justify-content: center;
+}
+
+[#{$ns}flexbox~="x-start"] {
+  justify-content: flex-start;
+}
+
+[#{$ns}flexbox~="x-end"] {
+  justify-content: flex-end;
+}
+
+[#{$ns}flexbox~="x-between"] {
+  justify-content: space-between;
+}
+
+[#{$ns}flexbox~="x-around"] {
+  justify-content: space-around;
+}
+
+[#{$ns}flexbox~="wrap"] {
+  flex-wrap: wrap;
+}
+
+[#{$ns}flex~="y-center"] {
+  align-self: center;
+}
+
+[#{$ns}flex~="y-start"] {
+  align-self: flex-start;
+}
+
+[#{$ns}flex~="y-end"] {
+  align-self: flex-end;
+}
+
+[#{$ns}flex~="y-baseline"] {
+  align-self: baseline;
+}
+
+[#{$ns}flex~="y-stretch"] {
+  align-self: stretch;
+}
+
+// [END]

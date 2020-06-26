@@ -1,0 +1,23 @@
+angular.module("ba.shared", [
+  "ba.shared.directives.actionsMenu",
+  "ba.shared.directives.checkbox",
+  "ba.shared.directives.dropdown",
+  "ba.shared.directives.datepicker",
+  "ba.shared.directives.dropdown",
+  "ba.shared.directives.growler",
+  "ba.shared.directives.modal",
+  "ba.shared.directives.popdown",
+  "ba.shared.directives.slider",
+  "ba.shared.directives.switch",
+  "ba.shared.directives.svg",
+  "ba.shared.directives.timepicker",
+  "ba.shared.directives.tooltip",
+  "ba.shared.directives.transition-mask",
+  "ba.shared.directives.typeahead",
+  "ba.shared.util",
+  "ba.shared.util.bus",
+  "ba.shared.util.dateparser",
+  "ba.shared.util.debounce",
+  "ba.shared.util.position",
+  "ba.shared.util.transition"
+]);

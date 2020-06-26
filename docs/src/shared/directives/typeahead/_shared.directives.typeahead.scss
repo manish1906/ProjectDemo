@@ -1,0 +1,131 @@
+[#{$ns}typeahead],
+.#{$ns}typeahead {
+    position: relative;
+}
+
+.open {
+    &>.#{$ns}typeahead-menu,
+    &>[#{$ns}typeahead-menu] {
+        display: block;
+    }
+}
+
+[#{$ns}typeahead-menu],
+.#{$ns}typeahead-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    background: $pure-white;
+    // border: 1px solid $mono-light;
+    z-index: 100000;
+    display: none;
+    min-width: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .06), 0 3px 6px rgba(0, 0, 0, 0.3);
+    border-radius: $base-border-radius;
+    margin-top: $base-border-width;
+
+    &.#{$ns}typeahead-menu--right {
+        left: auto;
+        right: 0;
+    }
+
+    &.#{$ns}typeahead-menu--top-right {
+        left: auto;
+        right: 100%;
+        top: 0;
+    }
+
+    &.#{$ns}typeahead-menu--bottom {
+        top: auto;
+        bottom: 100%;
+    }
+
+    &.#{$ns}typeahead-menu--bottom-right {
+        left: auto;
+        right: 100%;
+        top: auto;
+        bottom: 100%;
+    }
+
+    &.#{$ns}typeahead-menu--block {
+        width: 100% !important;
+    }
+}
+
+
+
+.#{$ns}typeahead-item {
+    @extend %p;
+    @extend %semi-bold;
+    @extend %text-ellipsis;
+    position: relative;
+    cursor: pointer;
+    height: $bordered-dimensions-md;
+    line-height: $bordered-dimensions-md;
+    padding: 0 $pad-x-md;
+    color: $mono;
+
+    svg {
+        fill: $mono-light;
+    }
+
+    &:first-child {
+        border-top-left-radius: $base-border-radius;
+        border-top-right-radius: $base-border-radius;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+    }
+
+    //&:not(:last-child) {
+    //  border-bottom: $base-border-width solid $mono-lighter;
+    //}
+
+    &:hover {
+        &:not(.#{$ns}dropdown-item--active) {
+            background: $white;
+
+            svg {
+                fill: $mono;
+            }
+        }
+    }
+
+    &:active:not(.#{$ns}dropdown-item--active) {
+        background: $mono-lightest;
+        transition: background 0.05s ease-in-out;
+    }
+
+    &[disabled="disabled"] {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+    &>.ba-typeahead-menu {
+        display: block;
+        top: 0;
+        left: 100%;
+    }
+
+    &.#{$ns}typeahead-item--success {
+        &:hover {
+            .#{$ns}dropdown-item__icon svg {
+                fill: $brand-success;
+            }
+        }
+    }
+
+    &.#{$ns}typeahead-item--danger {
+        &:hover {
+            .#{$ns}dropdown-item__icon svg {
+                fill: $brand-danger;
+            }
+        }
+    }
+}

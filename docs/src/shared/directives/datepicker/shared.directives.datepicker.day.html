@@ -1,0 +1,41 @@
+<table role="grid" style="outline:0;" aria-labelledby="{{::uniqueId}}-title" aria-activedescendant="{{activeDateId}}"
+    ba-col="12">
+    <thead>
+        <tr class="ba-datepicker-header" ba-mb="2">
+            <th>
+                <button type="button" class="ba-btn-n-mono ba-svg-btn ba-btn--xs ba-btn--block" ng-click="move(-1)" tabindex="-1"
+                    ba-svg="arrow-left-1" ba-c-svg="mono-dark"></button>
+            </th>
+            <th colspan="{{::5 + showWeeks}}" ba-text="h5 small-caps center">
+                <strong ba-text="">{{title}}</strong>
+            </th>
+            <th>
+                <button type="button" class="ba-btn-n-mono ba-svg-btn ba-btn--xs ba-btn--block" ng-click="move(1)" tabindex="-1"
+                    ba-svg="arrow-right-1" ba-c-svg="mono-dark"></button>
+            </th>
+        </tr>
+        <tr>
+            <th ng-if="showWeeks" class="text-center"></th>
+            <th ng-repeat="label in ::labels track by $index" ba-pt="1" ba-pb="1" class="text-center">
+                <small aria-label="{{::label.full}}" ba-text="h6 small-caps semi-bold" ba-c-text="mono-dark">{{::label.abbr}}
+                </small>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in rows track by $index">
+            <td ng-if="showWeeks" class="text-center h6"><em>{{ weekNumbers[$index] }}</em></td>
+            <td align="center" ng-repeat="dt in row track by dt.date" class="text-center ba-datepicker-date" role="gridcell"
+                id="{{::dt.uid}}" ng-class="::dt.customClass">
+                <!--dt.disabled means that its past min or max date-->
+                <!--dt.selected means that its the current date-->
+                <!--isActive(dt) means its the first of each month-->
+                <!--dt.secondary means its a day thats outside of the current month-->
+                <button type="button" class="ba-btn-n-mono-dark ba-btn--xs ba-datepicker-btn--day" ng-class="{'ba-btn--active': dt.selected, 'ba-datepicker-date--current': dt.current, 'ba-datepicker-date--secondary': dt.secondary && !dt.disabled}"
+                    ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1">
+                    {{::dt.label}}
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

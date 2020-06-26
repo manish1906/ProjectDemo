@@ -1,0 +1,45 @@
+<table>
+    <tbody>
+        <tr class="text-center" ng-show="::showSpinners">
+            <td ba-text="center">
+                <div ng-click="incrementHours()" class="ba-svg-btn" ba-mb="1">
+                    <div ba-svg="arrow-up-1" class="ba-svg-sm"></div>
+                </div>
+            </td>
+            <td>&nbsp;</td>
+            <td ba-text="center">
+                <div ng-click="incrementMinutes()" class="ba-svg-btn" ba-mb="1">
+                    <div ba-svg="arrow-up-1" class="ba-svg-sm"></div>
+                </div>
+            </td>
+            <td ng-show="showMeridian"></td>
+        </tr>
+        <tr>
+            <td class="form-group" ng-class="{'has-error': invalidHours}">
+                <input class="ba-input-sm ba-timepicker-input" type="text" ng-model="hours" ng-change="updateHours()"
+                    class="form-control text-center" ng-readonly="::readonlyInput" maxlength="2">
+            </td>
+            <td ba-px="2" ba-text="h6 semi-bold" ba-c-text="mono">:</td>
+            <td class="form-group" ng-class="{'has-error': invalidMinutes}">
+                <input class="ba-input-sm ba-timepicker-input" type="text" ng-model="minutes" ng-change="updateMinutes()"
+                    class="form-control text-center" ng-readonly="::readonlyInput" maxlength="2">
+            </td>
+            <td class="ba-timepicker-meridian-btn" ng-show="showMeridian"><button type="button" ba-ml="2" class="ba-btn-o-mono ba-btn--rounded ba-btn--sm"
+                    ng-click="toggleMeridian()">{{meridian}}</button></td>
+        </tr>
+        <tr class="text-center" ng-show="::showSpinners">
+            <td ba-text="center">
+                <div ng-click="decrementHours()" class="ba-svg-btn" ba-mt="1.5">
+                    <div ba-svg="arrow-down-1" class="ba-svg-sm"></div>
+                </div>
+            </td>
+            <td>&nbsp;</td>
+            <td ba-text="center">
+                <div ng-click="decrementMinutes()" class="ba-svg-btn" ba-mt="1.5">
+                    <div ba-svg="arrow-down-1" class="ba-svg-sm"></div>
+                </div>
+            </td>
+            <td ng-show="showMeridian"></td>
+        </tr>
+    </tbody>
+</table>

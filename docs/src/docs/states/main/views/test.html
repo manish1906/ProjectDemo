@@ -1,0 +1,13 @@
+list
+<table>
+    <tr>
+        <td>
+    <li ng-repeat="msg in messagelist" ng-click="goDoc(msg)"> 
+        <a class="rootLink item-support colorize" ui-sref='main.app.details({message: msg.messageTitle})'>{{msg.messageTitle}} </a>
+    </li></td>
+    
+   
+          <td >
+              <div style="margin-left: 100px;" ui-view></div>   </td>
+</tr>
+</table>

@@ -1,0 +1,27 @@
+<ul
+  class="ba-dropdown-menu ba-dropdown-menu--sm ba-dropdown-menu--contextmenu"
+  style="width: 150px; display: block;"
+>
+  <li
+    class="ba-dropdown-item"
+    ng-class="dropdownItem.class"
+    ng-repeat="dropdownItem in actionsList"
+    ng-disabled="dropdownItem.isDisabled(actionsItem, $event)"
+    ng-click="action(dropdownItem, actionsItem, $event)"
+  >
+    <div ba-flexbox="row y-center" ba-px="1.5">
+      <div
+        class="ba-dropdown-item__icon ba-svg-xs"
+        ba-svg="{{::dropdownItem.icon}}"
+        ba-mr="1.5"
+      ></div>
+      <div
+        class="ba-dropdown-item__label"
+        ba-text="p small normal"
+        ba-c-text="2"
+      >
+        {{::(dropdownItem.getTitle(actionsItem) || dropdownItem.title)}}
+      </div>
+    </div>
+  </li>
+</ul>

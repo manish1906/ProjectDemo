@@ -1,0 +1,53 @@
+$bg-mask-opacity: 0.54;
+
+// top right header billing plan logo badge icon
+%bg-icon-hike {
+  background-size: cover;
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+}
+
+.bg-icon-hike-day {
+  @extend %bg-icon-hike;
+  background-image: url($path-assets+"imgs/icon-hike-day.svg");
+}
+.bg-icon-hike-section {
+  @extend %bg-icon-hike;
+  background-image: url($path-assets+"imgs/icon-hike-section.svg");
+}
+.bg-icon-hike-summit {
+  @extend %bg-icon-hike;
+  background-image: url($path-assets+"imgs/icon-hike-summit.svg");
+}
+.bg-icon-hike-thru {
+  @extend %bg-icon-hike;
+  background-image: url($path-assets+"imgs/icon-hike-thru.svg");
+}
+.bg-icon-hike-trial {
+  @extend %bg-icon-hike;
+  background-image: url($path-assets+"imgs/icon-hike-trial.svg");
+}
+
+.bg-main-1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 734px;
+  height: 734px;
+  background-size: cover;
+  background-image: url($path-assets+"imgs/main-1.webp");
+  transition: all 0.2s ease-in-out;
+}
+
+.bg-main-2 {
+  width: 450px;
+  height: 450px;
+  background-size: cover;
+  background-image: url($path-assets+"imgs/main-2.webp");
+}
+
+.bg-white {
+  background: $white;
+}

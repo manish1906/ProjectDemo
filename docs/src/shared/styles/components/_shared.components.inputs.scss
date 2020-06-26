@@ -1,0 +1,476 @@
+@mixin input-color($color, $color-shadow) {
+  border-color: $color;
+  color: $color;
+
+  &:hover:not(:focus) {
+    border-color: $color-shadow !important;
+  }
+}
+
+%input,
+.#{$ns}input {
+  @extend %p;
+  background: $white;
+  // background: $pure-white;
+  outline: 0;
+  border: $base-border-width solid $white;
+  width: 75%;
+  height: $bordered-dimensions-md;
+  font-family: $base-font-family;
+  padding: 0 $pad-x-md;
+  border-radius: $base-border-radius;
+
+  &.#{$ns}input--pure {
+    @extend %h3;
+    background: $pure-white;
+    border-width: 0 !important;
+
+    height: $dimensions-md + 1px;
+    padding: 0 $pad-x-sm;
+
+    &.#{$ns}input--sm {
+      @extend %p;
+      height: $dimensions-sm + 1px;
+      padding: 0 $pad-x-xs;
+    }
+
+    &.#{$ns}input--xs {
+      @extend %p;
+      height: $dimensions-xs + 1px;
+      padding: 0 $pad-x-xxs;
+    }
+    
+    &:hover:not(:focus) {
+      background: $white;
+      cursor: pointer;
+    }
+
+    transition: all 0.2s;
+  }
+
+  &:focus:not([readonly="readonly"]) {
+    // @extend %p; was overridding input--pure 
+    // TODO verify ^ doesn't breka anything
+    border-color: $brand-primary;
+    background: $pure-white;
+  }
+
+  &:hover:not(:focus) {
+    border: $base-border-width solid darken($mono-lightest, 3%);
+  }
+
+  &[readonly="readonly"] {
+    background: $mono-lightest;
+    color: $mono;
+    cursor: no-drop;
+  }
+}
+
+.#{$ns}input--pill {
+  border-radius: 500px;
+}
+
+.#{$ns}display-invalid.ng-invalid.ng-touched {
+  border-color: $brand-danger !important;
+}
+
+.#{$ns}display-valid.ng-valid.ng-touched {
+  border-color: $brand-success !important;
+}
+
+.#{$ns}input--short {
+  width: 50%;
+}
+
+.#{$ns}input-xxs {
+  @extend .#{$ns}input;
+  height: $bordered-dimensions-xxs;
+  padding: 0 $pad-x-xxs;
+  line-height: $bordered-dimensions-xxs;
+}
+
+.#{$ns}input-xs {
+  @extend .#{$ns}input;
+  height: $bordered-dimensions-xs;
+  padding: 0 $pad-x-xs;
+}
+
+.#{$ns}input-sm {
+  @extend .#{$ns}input;
+  // TODO changed from $bordered-dimensions-xs to account for pill button alignment, look into later
+  height: $dimensions-sm;
+  padding: 0 $pad-x-sm;
+  line-height: $bordered-dimensions-sm;
+}
+
+.#{$ns}input-md {
+  @extend .#{$ns}input;
+}
+
+.#{$ns}input-lg {
+  @extend .#{$ns}input;
+  // height: $bordered-dimensions-lg;
+  padding: 0 $pad-x-sm;
+}
+
+.#{$ns}input--success {
+  @include input-color($brand-success, $brand-success-shadow);
+}
+
+.#{$ns}input--danger {
+  @include input-color($brand-danger, $brand-danger-shadow);
+}
+
+.#{$ns}input--stretch {
+  display: block;
+  width: 100%;
+
+  &:focus {
+    width: 100%;
+  }
+}
+
+.#{$ns}input-group-with-btn {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+
+  [class*="ba-input"],
+  .#{$ns}input-group-btn {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  [class*="ba-input"] {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: 0;
+    // margin-top: -1px;
+
+    &:hover {
+      border-right: 0 !important;
+    }
+  }
+
+  .#{$ns}input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+
+    .#{$ns}btn-mono {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.#{$ns}input-group {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &>svg {
+    position: absolute;
+    top: 50%;
+    fill: $mono-light;
+    transform: translateY(-50%);
+  }
+
+  &.#{$ns}has-prepend {
+
+    &>input,
+    &>.#{$ns}input-md {
+      padding-left: $bordered-dimensions-md + $pad-x-md + $base-font-size;
+    }
+
+    &>.#{$ns}input-xs {
+      padding-left: $bordered-dimensions-xs + $pad-x-xs + $base-font-size;
+    }
+
+    &>.#{$ns}input-sm {
+      padding-left: $bordered-dimensions-sm + $pad-x-sm + $base-font-size;
+    }
+
+    &>.#{$ns}input-lg {
+      padding-left: $bordered-dimensions-lg + $pad-x-lg + $base-font-size;
+    }
+  }
+
+  &.#{$ns}has-postpend {
+
+    &>input,
+    &>.#{$ns}input-md {
+      padding-right: $bordered-dimensions-md + $pad-x-md + $base-font-size;
+    }
+
+    &>.#{$ns}input-xs {
+      padding-left: $bordered-dimensions-xs + $pad-x-xs + $base-font-size;
+    }
+
+    &>.#{$ns}input-sm {
+      padding-right: $bordered-dimensions-sm + $pad-x-sm + $base-font-size;
+    }
+
+    &>.#{$ns}input-lg {
+      padding-right: $bordered-dimensions-lg + $pad-x-lg + $base-font-size;
+    }
+  }
+
+  &.#{$ns}input-group--xs {
+    &>input {
+      padding-left: $pad-x-xs + $base-font-size;
+    }
+
+    &>svg {
+      left: $pad-x-xs / 1.5;
+    }
+  }
+
+  &.#{$ns}input-group--sm {
+    &>input {
+      padding-left: $pad-x-sm + $base-font-size;
+    }
+
+    &>svg {
+      left: $pad-x-sm / 1.5;
+    }
+  }
+
+  &.#{$ns}input-group--md {
+    &>input {
+      padding-left: $pad-x-md + $base-font-size;
+    }
+
+    &>svg {
+      left: $pad-x-md / 1.5;
+    }
+  }
+
+  &.#{$ns}input-group--lg {
+    &>input {
+      padding-left: $pad-x-lg + $base-font-size;
+    }
+
+    svg {
+      left: $pad-x-lg/1.5;
+    }
+  }
+}
+
+.#{$ns}input-group__prepend--btn {
+  border: 2px solid $mono-lighter;
+}
+
+.#{$ns}input-group__prepend,
+.#{$ns}input-group__postpend {
+  position: absolute;
+  top: 0;
+}
+
+.#{$ns}input-group__prepend {
+  left: 0;
+}
+
+.#{$ns}input-group__postpend {
+  right: 0;
+}
+
+.#{$ns}input-label-group {
+  position: relative;
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+
+  &>input,
+  &>.#{$ns}input-label-group__input {
+    width: 100%;
+  }
+
+  &>label {
+    @extend %text-ellipsis;
+    display: table-cell;
+    padding: 0 $pad-x-sm;
+    vertical-align: middle;
+    text-align: center;
+    background: $mono-lighter;
+    color: $mono;
+    max-width: 50%;
+  }
+}
+
+.#{$ns}textarea {
+  @extend %input;
+  padding: $pad-xs;
+  height: auto;
+  width: 100%;
+
+  &:focus:not([readonly="readonly"]) {
+    height: auto;
+  }
+}
+
+.#{$ns}textarea--vertical-resize {
+  resize: vertical;
+}
+
+.#{$ns}label {
+  display: inline-block;
+  vertical-align: middle;
+  background: $mono-lighter;
+  color: $mono;
+}
+
+.#{$ns}label--sm {
+  @extend %p;
+  padding: $pad-sm;
+}
+
+.#{$ns}label--md {
+  @extend %h5;
+  padding: $pad-md;
+}
+
+.#{$ns}input-label {
+  @extend %h6;
+  @extend %semi-bold;
+  @extend %small-caps;
+  display: block;
+  color: $text-secondary;
+  margin-bottom: $base-spacing-unit;
+}
+
+.#{$ns}input-icon-group {
+  position: relative;
+
+  [ba-svg] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 2px;
+    width: 40px;
+    text-align: center;
+    z-index: $z0;
+
+    svg {
+      fill: $mono-light;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  input {
+    padding-left: 40px;
+  }
+}
+
+.#{$ns}input-btn-group {
+  position: relative;
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+
+  &>input {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+
+    &:hover {
+      border-right: 0 !important;
+    }
+  }
+
+  &>.#{$ns}input-btn-group__btn {
+    @extend %text-ellipsis;
+    @extend %h6;
+    @extend %small-caps;
+    @extend %semi-bold;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background: $mono-lighter;
+    color: $mono;
+    max-width: 50%;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    box-shadow: inset 0 0 0 $base-border-width $mono-light;
+    border-top-right-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+
+    &:hover {
+      box-shadow: inset 0 0 0 $base-border-width $mono;
+    }
+
+    &:active {
+      background: darken($mono-lighter, 3%);
+    }
+
+    &[disabled="disabled"] {
+      pointer-events: none;
+      color: $text-disabled;
+    }
+
+    &.#{$ns}input-btn-group__btn--primary {
+      background: $brand-primary;
+      color: $white;
+      box-shadow: inset 0 0 0 $base-border-width $brand-primary-shadow;
+
+      &:hover {
+        box-shadow: inset 0 0 0 $base-border-width $brand-primary-shadow;
+      }
+    }
+  }
+}
+
+.#{$ns}input-btn-group--pill {
+  &>input {
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+  }
+
+  &>.#{$ns}input-btn-group__btn {
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 500px;
+  }
+}
+
+.#{$ns}input-password {
+  position: relative;
+}
+
+.#{$ns}input-password__link {
+  @extend %noselect;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  color: $mono;
+  padding: $base-spacing-unit * 3;
+
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+.#{$ns}input-domain {
+  padding-right: 120px;
+}
+
+.#{$ns}input-domain-url {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px $base-spacing-unit * 3;
+}
+
+.#{$ns}input-domain-icon {
+  position: absolute;
+  right: -$base-spacing-unit * 7;
+  top: 50%;
+  transform: translateY(-50%);
+
+  svg {
+    display: block;
+  }
+}

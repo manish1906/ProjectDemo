@@ -1,0 +1,107 @@
+$slider-width-sm: $bordered-dimensions-sm / 2;
+$slider-width-md: $bordered-dimensions-md / 2;
+$slider-width-lg: $bordered-dimensions-lg / 2;
+$slider-handle-bg: $mono-lighter;
+$slider-handle-border: $mono-light;
+$slider-bar-bg: $white;
+$slider-bar-selected-bg: $mono-light;
+
+[ba-slider] {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: $slider-width-sm;
+    margin: $base-spacing-unit*4 0 0 0;
+    vertical-align: middle;
+    border-radius: 500px;
+}
+
+[ba-slider] span {
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+[ba-slider] span.base {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+[ba-slider] span.bar {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: $slider-bar-bg;
+    border-radius: 500px;
+}
+
+[ba-slider] span.bar.selection {
+    z-index: 1;
+    width: 0;
+    border: $base-border-width solid $slider-handle-border;
+    background: $slider-bar-selected-bg;
+    border-radius: 0;
+}
+
+[ba-slider] span.pointer {
+    top: 0;
+    z-index: 2;
+    width: $slider-width-sm;
+    height: $slider-width-sm;
+    cursor: pointer;
+    border: $base-border-width $slider-handle-border solid;
+    background-color: $slider-handle-bg;
+    border-radius: 50%;
+}
+
+[ba-slider] span.pointer.active {
+    border-color: $mono;
+}
+
+[ba-slider] span.bubble {
+    @extend %h6;
+    @extend %bold;
+    @extend %x-small;
+    color: $text-primary;
+    top: -($slider-width-sm/2 + $base-spacing-unit*2);
+    cursor: default;
+}
+
+[ba-slider] span.bubble.selection {
+    color: $mono-dark;
+    //  top: 15px;
+}
+
+[ba-slider] span.bubble.limit {
+    color: $mono-light;
+}
+
+[ba-slider].ba-slider--inverse span.limit {
+    color: lighten($mono, 10%);
+}
+
+[ba-slider].ba-slider--inverse span.bar {
+    background: $mono-light;
+}
+
+[ba-slider].ba-slider--inverse span.bar.selection {
+    background: $mono-dark;
+}
+
+[ba-slider].disabled {
+    pointer-events: none;
+
+    span.pointer {
+        display: none;
+    }
+
+    span.bubble {
+        color: $mono-light !important;
+        opacity: 0.5 !important;
+    }
+
+    span.bar.selection {
+        display: none;
+    }
+}
